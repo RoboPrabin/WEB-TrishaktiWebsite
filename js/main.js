@@ -32,16 +32,6 @@
             }
         }
     });
-
-    // $(document).ready(function() {
-    //     // Alert the screen width on page load
-    //     alert("Screen width: " + $(window).width() + "px");
-    
-    //     // Optional: Alert the screen width on window resize
-    //     $(window).resize(function() {
-    //         alert("Screen width: " + $(window).width() + "px");
-    //     });
-    // });
     
 
     $(document).ready(function() {
