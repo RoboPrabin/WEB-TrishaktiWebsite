@@ -32,12 +32,50 @@
             }
         }
     });
+
+    // $(document).ready(function() {
+    //     // Alert the screen width on page load
+    //     alert("Screen width: " + $(window).width() + "px");
     
+    //     // Optional: Alert the screen width on window resize
+    //     $(window).resize(function() {
+    //         alert("Screen width: " + $(window).width() + "px");
+    //     });
+    // });
+    
+
+    $(document).ready(function() {
+        function adjustTitle() {
+            if ($(window).width() > 1635
+        ) {  // Large screen (adjust the breakpoint as needed)
+                // Remove <br> by replacing with plain text
+                $('.goal').html('Your Financial Status Is Our Goal');
+            } else {
+                // Ensure <br> is present if screen size is small
+                if (!$('.goal').html().includes('<br>')) {
+                    $('.goal').html('Your Financial Status Is Our<br>Goal');
+                }
+            }
+        }
+    
+        // Call the function initially
+        adjustTitle();
+    
+        // Re-check on window resize
+        $(window).resize(function() {
+            adjustTitle();
+        });
+    });
+    
+
+
+
     
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
+            $('.back-to-top').removeClass('visually-hidden');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
