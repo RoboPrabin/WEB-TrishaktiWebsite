@@ -15,6 +15,11 @@
     z-index: 99;
 }
 
+
+.good-alignment{
+    text-align: justify;
+}
+
 h1,
 .h1,
 h2,
@@ -60,6 +65,19 @@ h6,
     transition: .5s;
     font-weight: 500;
 }
+
+.up-arrow {
+    background-color:#011A41; /* Change this to your desired background color */
+    color: #ffffff; /* Optional: Change the arrow color if needed */
+    transition: background-color 0.3s ease; /* Optional: Smooth transition for background color */
+}
+
+.up-arrow:hover {
+background-color: #0242aa; /* Optional: Change background color on hover */
+color: white;
+}
+
+
 
 .btn-primary,
 .btn-outline-primary:hover {
