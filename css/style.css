@@ -7,6 +7,11 @@
     --dark: #011A41;
 }
 
+.btn-light {
+background-color: #ffffff;
+}
+
+
 
 .form-select{
     padding: 12px;
