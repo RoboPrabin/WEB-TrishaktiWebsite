@@ -7,6 +7,10 @@
     --dark: #011A41;
 }
 
+
+.form-select{
+    padding: 12px;
+}
 .back-to-top {
     position: fixed;
     display: none;
