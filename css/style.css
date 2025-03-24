@@ -247,10 +247,25 @@ color: white;
     color: var(--tertiary);
 }
 
+.sup{
+    font-size: small;
+}
 
 /*** Facts ***/
+/* .facts {
+    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url(../img/bg1.png);
+} */
+
 .facts {
-    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url(../img/bg.png);
+    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg1.png);
+}
+
+.fact {
+    color: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
+}
+
+.fon{
+    color: #4174cf;
 }
 
 
