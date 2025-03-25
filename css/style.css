@@ -11,7 +11,9 @@
 background-color: #ffffff;
 }
 
-
+.text-light {
+    color: #000B1C;
+}
 
 .form-select{
     padding: 12px;
@@ -270,19 +272,18 @@ color: white;
 
 .ex{
         width: 24%;
-
-}
-
-.exp{
-    border: solid 1px #4174cf;
+        margin-top: -4px;
 }
 
 .exp1{
-    border: solid 1px #4174cf;
     margin-top: -4px;
 }
 
+.curve{
+   border: solid 2px #0e1012;
+    border-radius: 20px;
 
+}
 
 /*** Callback ***/
 .callback {
