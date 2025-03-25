@@ -268,6 +268,21 @@ color: white;
     color: #4174cf;
 }
 
+.ex{
+        width: 24%;
+
+}
+
+.exp{
+    border: solid 1px #4174cf;
+}
+
+.exp1{
+    border: solid 1px #4174cf;
+    margin-top: -4px;
+}
+
+
 
 /*** Callback ***/
 .callback {
