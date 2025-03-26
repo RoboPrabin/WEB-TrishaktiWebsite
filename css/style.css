@@ -232,6 +232,12 @@ color: white;
         object-fit: cover;
     }
 }
+.btn-icon {
+    width: 30px;  /* Adjust the width of the logo */
+    height: auto; /* Auto height to maintain aspect ratio */
+    margin-right: 10px;  /* Adds space between the logo and text */
+}
+
 
 .page-header {
     padding-top: 12rem;

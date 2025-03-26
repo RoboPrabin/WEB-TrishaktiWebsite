@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Trishakti Securities </title>
+
+
+    <meta name="description" content="Trishakti" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="./assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="./assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="./assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/migency-icons/style.css">
+    <link rel="stylesheet" href="./assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="./assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="./assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="./assets/vendors/gordita-font/stylesheet.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <div id="contentContainer">
+
+        </div>
+        <div id="footerContainer">
+
+        </div>
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+
+
+
+    <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="./assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="./assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="./assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="./assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="./assets/vendors/odometer/odometer.min.js"></script>
+    <script src="./assets/vendors/swiper/swiper.min.js"></script>
+    <script src="./assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="./assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="./assets/vendors/wow/wow.js"></script>
+    <script src="./assets/vendors/isotope/isotope.js"></script>
+    <script src="./assets/vendors/countdown/countdown.min.js"></script>
+    <script src="./assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="./assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="./assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="./assets/vendors/vegas/vegas.min.js"></script>
+    <script src="./assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="./assets/vendors/timepicker/timePicker.js"></script>
+    <script src="./assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="./assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="./assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+
+    <!-- template js -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script>
+        createMenu();
+        loadContent('weightedaverage').then(function () {
+            $(document).ready(function () {
+                var index = 0;
+                $("#add").click(function () {
+                    index++;
+                    var newParInput = `
+                    <select class="form-select" id="parValue${index}">
+                            <option value="10" name="parvalue">10</option>
+                            <option value="100" name="parvalue">100</option>
+                    </select>`;
+                    $('.parValueContainer').append(newParInput);
+
+                    var newQuantityInput = `<input type="number" class="form-control" id="quantity${index}" placeholder="Enter Number Only">`;
+                    $('.quantityContainer').append(newQuantityInput);
+
+                    var newRateInput = `<input type="number" class="form-control" id="rate${index}" placeholder="Enter Number Only">`;
+                    $('.rateContainer').append(newRateInput);
+
+                    var newAmountInput = `<input type="number" class="form-control" id="amount${index}" placeholder="Amount" readonly>`;
+                    $('.amountContainer').append(newAmountInput);
+
+                });
+                $('#clearFields').click(function () {
+                    $('#weightedAverage').text('');
+                    for (i = 0; i <= index; i++) {
+
+                        var quantityIds = '#quantity' + i;
+                        var rateIds = '#rate' + i;
+                        var amountIds = '#amount' + i;
+                        $(rateIds).val('');
+                        $(quantityIds).val('');
+                        $(amountIds).val('');
+
+                    }
+                });
+
+                function calculateTotalPayableIpo(parValue, quantity) {
+                    var totalAmount = parValue * quantity;
+
+
+
+                    return totalAmount;
+                }
+                $('#calculate').click(function () {
+
+                    var sumTotal = 0;
+                    var totalQuantity = 0;
+                    for (i = 0; i <= index; i++) {
+
+                        var quantityIds = '#quantity' + i;
+                        var parValueIds = '#parValue' + i;
+                        var quant = parseInt($(quantityIds).val());
+                        var parValue = parseFloat($(parValueIds).val());
+                        if (isNaN(quant) || isNaN(parValue)) {
+                            $('#errorSpan').text('Enter all values required');
+                            return;
+                        }
+                        if (parValue <= 0 || quant <= 0) {
+                            $('#errorSpan').text('Enter valid values');
+                            return;
+                        }
+                        var displayTotal = calculateTotalPayableIpo(parValue, quant);
+
+                        $('#amount' + i).val(displayTotal.toFixed(2));
+                        sumTotal += displayTotal;
+                        totalQuantity += quant;
+
+                    }
+                    var weightedAverage = sumTotal / totalQuantity;
+                    $('#weightedAverage').text(weightedAverage.toFixed(2));
+                });
+
+                //secondary average functions
+                var sIndex = 0;
+
+                $("#sAdd").click(function () {
+                    sIndex++;
+                    var newParInput = `
+                    <select class="form-select" id="sParValue${sIndex}">
+                            <option value="10" name="sParvalue">10</option>
+                            <option value="100" name="sParvalue">100</option>
+                    </select>`;
+                    $('.sParValueContainer').append(newParInput);
+
+                    var newQuantityInput = `<input type="number" class="form-control" id="sQuantity${sIndex}" placeholder="Enter Number Only">`;
+                    $('.sQuantityContainer').append(newQuantityInput);
+
+                    var newRateInput = `<input type="number" class="form-control" id="sRate${sIndex}" placeholder="Enter Number Only">`;
+                    $('.sRateContainer').append(newRateInput);
+
+                    var newAmountInput = `<input type="number" class="form-control" id="sAmount${sIndex}" placeholder="Amount" readonly>`;
+                    $('.sAmountContainer').append(newAmountInput);
+                });
+
+                $('#sClearFields').click(function () {
+                    $('#sWeightedAverage').text('');
+                    for (i = 0; i <= sIndex; i++) {
+
+                        var qtyIds = '#sQuantity' + i;
+                        var rateIds = '#sRate' + i;
+                        var amountIds = '#sAmount' + i;
+                        $(qtyIds).val('');
+                        $(rateIds).val('');
+                        $(amountIds).val('');
+
+                    }
+                });
+
+
+
+
+                var dpCharge = 25;
+                var brokerPercent = 0.36;
+                var brokerCom = 10;
+                var sebonPercent = 0.014;
+                function calculateTotalPayable(rate, quantity) {
+                    var totalAmount = rate * quantity;
+
+                    var sebonFee = (totalAmount * sebonPercent) / 100;
+
+                    if (totalAmount <= 50000) {
+                        var brokerCom = (brokerPercent * totalAmount) / 100;
+                        if (brokerCom < 10) {
+                            brokerCom = 10;
+                        }
+
+                    }
+                    if (totalAmount > 50000 && totalAmount <= 500000) {
+                        brokerPercent = 0.33;
+                        var brokerCom = (brokerPercent * totalAmount) / 100;
+                    }
+                    if (totalAmount > 500000 && totalAmount <= 2000000) {
+                        brokerPercent = 0.31;
+                        var brokerCom = (brokerPercent * totalAmount) / 100;
+                    }
+                    if (totalAmount > 2000000 && totalAmount <= 10000000) {
+                        brokerPercent = 0.27;
+                        var brokerCom = (brokerPercent * totalAmount) / 100;
+                    }
+                    if (totalAmount > 10000000) {
+                        brokerPercent = 0.24;
+                        var brokerCom = (brokerPercent * totalAmount) / 100;
+
+                    }
+
+                    var totalPayable = totalAmount + brokerCom + sebonFee + dpCharge;
+                    return totalPayable;
+                }
+                $('#sCalculate').click(function () {
+
+
+
+                    var sumTotal = 0;
+                    var totalQuantity = 0;
+                    for (i = 0; i <= sIndex; i++) {
+
+                        var qtyIds = '#sQuantity' + i;
+                        var rateIds = '#sRate' + i;
+                        var quant = parseInt($(qtyIds).val());
+                        var rate = parseFloat($(rateIds).val());
+                        if (isNaN(quant) || isNaN(rate)) {
+                            $('#sErrorSpan').text('Enter all values required');
+                            return;
+                        }
+                        if (rate <= 0 || quant <= 0) {
+                            $('#sErrorSpan').text('Enter valid values');
+                            return;
+                        }
+                        $('#sErrorSpan').text('');
+                        var displayTotal = calculateTotalPayable(rate, quant);
+
+                        $('#sAmount' + i).val(displayTotal.toFixed(2));
+                        sumTotal += displayTotal;
+                        totalQuantity += quant;
+
+                    }
+                    var weightedAverage = sumTotal / totalQuantity;
+                    $('#sWeightedAverage').text(weightedAverage.toFixed(2));
+                });
+
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
