@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Trishakti Securities </title>
+
+
+    <meta name="description" content="Trishakti" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="../assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="../assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="../assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/migency-icons/style.css">
+    <link rel="stylesheet" href="../assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="../assets/vendors/gordita-font/stylesheet.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <div id="contentContainer">
+
+        </div>
+        <div id="footerContainer">
+
+        </div>
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+
+
+    <script src="../assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="../assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="../assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="../assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="../assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="../assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="../assets/vendors/odometer/odometer.min.js"></script>
+    <script src="../assets/vendors/swiper/swiper.min.js"></script>
+    <script src="../assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="../assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="../assets/vendors/wow/wow.js"></script>
+    <script src="../assets/vendors/isotope/isotope.js"></script>
+    <script src="../assets/vendors/countdown/countdown.min.js"></script>
+    <script src="../assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="../assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="../assets/vendors/vegas/vegas.min.js"></script>
+    <script src="../assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="../assets/vendors/timepicker/timePicker.js"></script>
+    <script src="../assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="../assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="../assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+
+    <!-- template js -->
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/menu.js"></script>
+    <script>
+        createMenu();
+        loadContent('dividendcalculator').then(function () {
+            $(document).ready(function () {
+                $("#calculate").click(function () {
+
+                    var parValue = parseFloat($('#parvalue').val());
+                    var shareQuantity = parseInt($('#ShareQuantity').val());
+                    var percentBonusShare = parseFloat($('#percentbonusshare').val());
+                    var percentCashDividend = parseFloat($('#percentcashdevident').val());
+
+                    if (isNaN(parValue) || isNaN(shareQuantity) || isNaN(percentBonusShare) || isNaN(percentCashDividend)) {
+                        $('#errorSpan').text('Please enter all values');
+                        return;
+                    }
+                    if (parValue <= 0 || shareQuantity <= 0 || percentBonusShare <= 0 || percentBonusShare > 100 || percentCashDividend <= 0 || percentCashDividend > 100) {
+                        $('#errorSpan').text('Please enter valid inputs');
+                        return;
+                    }
+                    $('#errorSpan').text('');
+
+                    var totalCash = parValue * shareQuantity;
+                    var cash = totalCash * (percentCashDividend / 100);
+                    var bonusShare = shareQuantity * (percentBonusShare / 100);
+                    var taxOnCashDividend = 0.05 * cash;
+                    var taxOnBonusShare = 0.05 * (bonusShare * parValue);
+                    var totalCashAmount = cash - taxOnBonusShare - taxOnCashDividend;
+                    $('#cash').text(cash.toFixed(2));
+                    $('#bonushare').text(bonusShare.toFixed(2));
+                    $('#taxOnCashDevidend').text(taxOnCashDividend.toFixed(2));
+                    $('#taxonBonusShare').text(taxOnBonusShare.toFixed(2));
+                    $('#totalCashAmount').text(totalCashAmount.toFixed(2));
+                    $("#calculate_value").show();
+                });
+                $('#clearFields').click(function () {
+                    $('#parvalue').val('');
+                    $('#ShareQuantity').val('');
+                    $('#percentbonusshare').val('');
+                    $('#percentcashdevident').val('');
+                    $('#cash').text(0);
+                    $('#bonushare').text(0);
+                    $('#taxOnCashDevidend').text(0);
+                    $('#taxonBonusShare').text(0);
+                    $('#totalCashAmount').text(0);
+
+                });
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
