@@ -267,6 +267,10 @@ color: white;
     background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg1.png);
 }
 
+.factt {
+    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg2.png);
+}
+
 .fact {
     color: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
 }
