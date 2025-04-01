@@ -7,6 +7,17 @@
     --dark: #011A41;
 }
 
+body {
+    font-family: 'Nunito', sans-serif; /* Apply the 'Nunito' font */
+  }
+
+  h1, p {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+
+
+
 .btn-light {
 background-color: #ffffff;
 }
