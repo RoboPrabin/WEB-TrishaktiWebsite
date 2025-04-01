@@ -11,7 +11,7 @@ body {
     font-family: 'Nunito', sans-serif; /* Apply the 'Nunito' font */
   }
 
-  h1, p {
+  h1,h5 p {
     font-family: 'Nunito', sans-serif;
   }
   
@@ -22,7 +22,7 @@ body {
     position: fixed; /* Keeps it in place while scrolling */
     top:130px; /* Distance from the bottom of the page */
     right: 30px; /* Distance from the right side */
-    background-color: #007BFF; /* Icon background color */
+    background-color: white; /* Icon background color */
     color: white; /* Icon color */
     font-size: 30px; /* Icon size */
     width: 60px; /* Icon width */
@@ -41,12 +41,6 @@ body {
 .floating-icon:hover {
     background-color: #0056b3; /* Darken the icon color on hover */
 }
-
-
-
-
-
-
 
 
 .btn-light {
@@ -177,7 +171,6 @@ color: white;
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
@@ -612,6 +605,11 @@ color: white;
 
 
 /*** Footer ***/
+footer {
+    background-color: white !important;
+}
+
+
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 5px;
@@ -626,7 +624,6 @@ color: white;
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
 }
