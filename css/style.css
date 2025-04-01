@@ -188,6 +188,9 @@ color: white;
     color: var(--primary);
 }
 
+
+
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         margin-top: 10px;
@@ -322,6 +325,7 @@ color: white;
 .exp1{
     margin-top: -4px;
 }
+
 
 .curve{
    border: solid 2px #0e1012;
