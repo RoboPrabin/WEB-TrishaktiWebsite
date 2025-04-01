@@ -17,6 +17,37 @@ body {
   
 
 
+  /* Styling for the floating icon */
+.floating-icon {
+    position: fixed; /* Keeps it in place while scrolling */
+    top:130px; /* Distance from the bottom of the page */
+    right: 30px; /* Distance from the right side */
+    background-color: #007BFF; /* Icon background color */
+    color: white; /* Icon color */
+    font-size: 30px; /* Icon size */
+    width: 60px; /* Icon width */
+    height: 60px; /* Icon height */
+    border-radius: 50%; /* Makes it round */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    z-index: 100; /* Higher number means closer to the front */
+
+}
+
+.floating-icon:hover {
+    background-color: #0056b3; /* Darken the icon color on hover */
+}
+
+
+
+
+
+
+
 
 .btn-light {
 background-color: #ffffff;
