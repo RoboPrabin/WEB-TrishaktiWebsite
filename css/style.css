@@ -20,7 +20,7 @@ body {
   /* Styling for the floating icon */
 .floating-icon {
     position: fixed; /* Keeps it in place while scrolling */
-    top:130px; /* Distance from the bottom of the page */
+    top: 170px; /* Distance from the bottom of the page */
     right: 30px; /* Distance from the right side */
     background-color: white; /* Icon background color */
     color: white; /* Icon color */
