@@ -163,14 +163,78 @@ color: white;
     transition: .5s;
 }
 
-.top-bar {
-    height: 45px;
-    border-bottom: 1px solid rgba(53, 94, 252, .07);
+/* Styling for the top-bar content */
+.top-bar .col-lg-6 small {
+    font-size: 1rem; /* Default font size for larger screens */
 }
+
+/* Adjust font size for medium screens */
+@media (max-width: 1236px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.9rem; /* Adjust font size further for smaller screens */
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.8rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+@media (max-width: 1100px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.65rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+/* Adjust font size for tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.67rem; /* Adjust font size further for smaller screens */
+    }
+}
+
+@media (max-width: 995px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.6rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+
+/* Adjust font size for mobile screens */
+@media (max-width: 768px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.8rem; /* Smaller font size for mobile screens */
+    }
+}
+
+/* Even smaller font size for very small screens */
+@media (max-width: 576px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.7rem; /* Further reduce font size for very small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 400px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.6rem; /* Reduce font size to fit very small screens */
+    }
+}
+
+/* For screens smaller than 200px (extremely small screens, like feature phones) */
+@media (max-width: 200px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.5rem; /* Further reduce font size for extremely small screens */
+    }
+}
+
 
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
@@ -202,6 +266,12 @@ color: white;
         padding: 10px 0;
     }
 }
+
+
+
+
+
+
 
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
@@ -309,9 +379,73 @@ color: white;
     background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg2.png);
 }
 
+/* Gradient color for the .fact class */
 .fact {
-    color: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
+    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
+    -webkit-background-clip: text; /* Ensures gradient applies to text */
+    background-clip: text; /* Standard property for compatibility */
+    color: transparent; /* Text color transparent to show the gradient */
+    font-weight: bold;
+    font-size: 2.5rem; /* Default font size for large screens */
 }
+
+/* Adjust font size for medium screens */
+@media (max-width: 1440px) {
+    .fact {
+        font-size: 3rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .fact {
+        font-size: 2rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+@media (max-width: 1100px) {
+    .fact {
+        font-size: 1.7rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+/* Adjust font size for tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .fact {
+        font-size: 1.5rem; /* Adjust font size further for smaller screens */
+    }
+}
+
+/* Adjust font size for mobile screens */
+@media (max-width: 768px) {
+    .fact {
+        font-size: 1.6rem; /* Smaller font size for mobile screens */
+    }
+}
+
+/* Even smaller font size for very small screens */
+@media (max-width: 576px) {
+    .fact {
+        font-size: 1.2rem; /* Further reduce font size for very small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 400px) {
+    .fact {
+        font-size: 1rem; /* Reduce font size to fit very small screens */
+    }
+}
+
+/* For screens smaller than 200px (extremely small screens, like feature phones) */
+@media (max-width: 200px) {
+    .fact {
+        font-size: 0.8rem; /* Further reduce font size for extremely small screens */
+    }
+}
+
+
+
 
 .fon{
     color: #4174cf;

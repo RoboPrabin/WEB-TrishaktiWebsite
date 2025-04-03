@@ -203,12 +203,6 @@ color: white;
     }
 }
 
-
-
-
-
-
-
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
@@ -315,61 +309,9 @@ color: white;
     background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg2.png);
 }
 
-/* Gradient color for the .fact class */
 .fact {
-    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
-    -webkit-background-clip: text; /* Ensures gradient applies to text */
-    background-clip: text; /* Standard property for compatibility */
-    color: transparent; /* Text color transparent to show the gradient */
-    font-weight: bold;
+    color: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
 }
-
-/* Font size for larger screens (default size) */
-.display-4 {
-    font-size: 3rem; /* Large font size for bigger screens */
-}
-
-/* Adjust font size for medium screens */
-@media (max-width: 1200px) {
-    .display-4 {
-        font-size: 2.5rem; /* Smaller font size for tablets and medium-sized screens */
-    }
-}
-
-@media (max-width: 1024px) {
-    .display-4 {
-        font-size: 2rem; /* Adjust font size further for smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .display-4 {
-        font-size: 1.5rem; /* Smaller font size for mobile screens */
-    }
-}
-
-@media (max-width: 576px) {
-    .display-4 {
-        font-size: 1.2rem; /* Even smaller font size for very small screens */
-    }
-}
-
-/* New breakpoints for 400px and 200px screens */
-
-/* For screens smaller than 400px */
-@media (max-width: 400px) {
-    .display-4 {
-        font-size: 1rem; /* Reduce font size to fit very small screens */
-    }
-}
-
-/* For screens smaller than 200px (extremely small screens, like feature phones) */
-@media (max-width: 200px) {
-    .display-4 {
-        font-size: 0.8rem; /* Further reduce font size for extremely small screens */
-    }
-}
-
 
 .fon{
     color: #4174cf;
