@@ -168,16 +168,21 @@ color: white;
     font-size: 1rem; /* Default font size for larger screens */
 }
 
-/* Adjust font size for medium screens */
+/* Adjust font size for larger screens */
+@media (max-width: 1440) {
+    .top-bar .col-lg-6 larger {
+        font-size: 1rem; /* Adjust font size further for lager screens */
+    }
+}
 @media (max-width: 1236px) {
-    .top-bar .col-lg-6 small {
-        font-size: 0.9rem; /* Adjust font size further for smaller screens */
+    .top-bar .col-lg-6 large {
+        font-size: 0.9rem; /* Adjust font size further for large screens */
     }
 }
 
 
 @media (max-width: 1200px) {
-    .top-bar .col-lg-6 small {
+    .top-bar .col-lg-6 medium {
         font-size: 0.8rem; /* Smaller font size for tablets and medium-sized screens */
     }
 }
