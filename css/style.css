@@ -1,20 +1,24 @@
 /********** Template CSS **********/
 :root {
-    --primary: #355EFC;
-    --secondary: #E93C05;
+    --primary: #354581;
+    --secondary: #24A148;
     --tertiary: #555555;
-    --light: #DFE4FD;
-    --dark: #011A41;
+    --light: #f4f4f4;
+    --dark: #354581;
 }
 
 body {
     font-family: 'Nunito', sans-serif; /* Apply the 'Nunito' font */
+    background-color: #f4f4f4 !important; /* Set the background color to #f4f4f4 */
   }
 
   h1,h5,h4,h2,h3,p {
     font-family: 'Nunito', sans-serif;
   }
-  
+
+.primary {
+    color: #354581;
+}
 
 
   /* Styling for the floating icon */
@@ -22,8 +26,8 @@ body {
     position: fixed; /* Keeps it in place while scrolling */
     top: 170px; /* Distance from the bottom of the page */
     right: 30px; /* Distance from the right side */
-    background-color: white; /* Icon background color */
-    color: white; /* Icon color */
+    background-color: #f4f4f4; /* Icon background color */
+    color: #f4f4f4; /* Icon color */
     font-size: 30px; /* Icon size */
     width: 60px; /* Icon width */
     height: 60px; /* Icon height */
@@ -39,16 +43,16 @@ body {
 }
 
 .floating-icon:hover {
-    background-color: #0056b3; /* Darken the icon color on hover */
+    background-color: #354581; /* Darken the icon color on hover */
 }
 
 
 .btn-light {
-background-color: #ffffff;
+background-color: #f4f4f4;
 }
 
 .text-light {
-    color: #000B1C;
+    color: #f4f4f4;
 }
 
 .form-select{
@@ -114,22 +118,21 @@ h6,
 }
 
 .up-arrow {
-    background-color:#011A41; /* Change this to your desired background color */
-    color: #ffffff; /* Optional: Change the arrow color if needed */
+    background-color:#354581; /* Change this to your desired background color */
+    color: #F4F4F4; /* Optional: Change the arrow color if needed */
     transition: background-color 0.3s ease; /* Optional: Smooth transition for background color */
 }
   
 .up-arrow:hover {
-background-color: #0242aa; /* Optional: Change background color on hover */
-color: white;
+background-color: #354581; /* Optional: Change background color on hover */
+color: #F4F4F4;
 }
-
-
 
 
 .btn-primary,
 .btn-outline-primary:hover {
-    color: var(--light);
+    background: var(--primary);
+    color: #F4F4F4;
 }
 
 .btn-square {
@@ -264,7 +267,7 @@ color: white;
     .navbar .navbar-nav {
         margin-top: 10px;
         border-top: 1px solid rgba(0, 0, 0, .07);
-        background: #FFFFFF;
+        background: #F4F4F4;
     }
 
     .navbar .navbar-nav .nav-link {
@@ -378,22 +381,23 @@ color: white;
 } */
 
 .facts {
-    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg1.png);
+    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95)), url(../img/bg1.png);
 }
 
 .factt {
-    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95)), url(../img/bg2.png);
+    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95)), url(../img/bg2.png);
 }
 
 /* Gradient color for the .fact class */
 .fact {
-    background: linear-gradient(rgba(7, 13, 36, 0.95), rgba(28, 41, 94, 0.95));
+    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95));
     -webkit-background-clip: text; /* Ensures gradient applies to text */
     background-clip: text; /* Standard property for compatibility */
     color: transparent; /* Text color transparent to show the gradient */
     font-weight: bold;
     font-size: 2.5rem; /* Default font size for large screens */
 }
+
 
 /* Adjust font size for medium screens */
 @media (max-width: 1440px) {
@@ -508,7 +512,7 @@ color: white;
 }
 
 .feature .feature-box:hover * {
-    color: #FFFFFF !important;
+    color: #F4F4F4 !important;
 }
 
 
@@ -523,11 +527,11 @@ color: white;
 }
 
 .service .nav .nav-link.active h5 {
-    color: #FFFFFF !important;
+    color: #F4F4F4 !important;
 }
 
 .service .nav .nav-link.active h5 i {
-    color: #FFFFFF !important;
+    color: #F4F4F4 !important;
 }
 
 
@@ -543,7 +547,7 @@ color: white;
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(53, 94, 252, .95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -581,7 +585,7 @@ color: white;
 }
 
 .project-item:hover .project-title h4 {
-    color: #FFFFFF;
+    color: #F4F4F4;
 }
 
 .project-carousel .owl-nav {
@@ -650,7 +654,7 @@ color: white;
 }
 
 .team-item:hover .team-text h4 {
-    color: #FFFFFF;
+    color: #F4F4F4;
 }
 
 .team-item .team-social .btn {
@@ -659,7 +663,7 @@ color: white;
 }
 
 .team-item:hover .team-social .btn {
-    background: #FFFFFF;
+    background: #F4F4F4;
 }
 
 .team-item .team-social .btn:hover {
@@ -706,7 +710,7 @@ color: white;
     left: 50%;
     transform: translateX(-50%);
     border: 30px solid;
-    border-color: #FFFFFF transparent transparent transparent;
+    border-color: #F4F4F4 transparent transparent transparent;
 }
 
 .testimonial-carousel .owl-item img {
@@ -756,7 +760,7 @@ color: white;
 
 /*** Footer ***/
 footer {
-    background-color: white !important;
+    background-color: #F4F4F4 !important;
 }
 
 
