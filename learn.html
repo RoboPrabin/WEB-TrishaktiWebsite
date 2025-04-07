@@ -1,3 +1,12 @@
+<?php
+// index.php - HTML structure and data display
+
+// Include the database connection and fetch functions
+include('db.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,13 +41,13 @@
 </head>
 
 <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border primary" role="status" style="width: 3rem; height: 3rem;"></div>
-        </div>
-        <!-- Spinner End -->
-    
-    
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
      <!-- Navbar Start -->
      <div id="stickyHeaderwrap" class="container-fluid fixed-top px-0 mt-1 text-dark wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
@@ -128,7 +137,9 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Page Header Start -->
+
+        
+         <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-4 animated slideInDown">Learning Materials</h1>
@@ -136,12 +147,149 @@
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="contact.html">Contact</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Market</li>
+                    <li class="breadcrumb-item active" aria-current="page">Learning Materials</li>
                 </ol>
             </nav>
         </div>
     </div>
+    <!-- Page Header End -->
 
+
+
+
+
+
+    
+    <div class="container-fluid my-5 py-5">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-md-3">
+                <div class="list-group sticky-top" style="top: 20px;">
+                    <button class="list-group-item list-group-item-action active" id="researchTab" onclick="showContent('research')">
+                        <h5><i class="fas fa-book-open me-3"></i><b>Research Paper</b></h5>
+                    </button>
+                    <button class="list-group-item list-group-item-action" id="educationTab" onclick="showContent('education')">
+                        <h5><i class="fas fa-chalkboard-teacher me-3"></i><b>Education Materials</b></h5>
+                    </button>
+                    <button class="list-group-item list-group-item-action" id="libraryTab" onclick="showContent('library')">
+                        <h5><i class="fas fa-book me-4"></i><b>Library</b></h5>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Content Section -->
+            <div class="col-md-9">
+                <!-- Content for Research Paper -->
+                <div id="researchContent" class="tab-content">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Content</th>
+                                    <th>Source</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Fetch data for the research tab
+                                $researchData = fetch_data('research');
+                                if ($researchData->num_rows > 0) {
+                                    $sn = 1;
+                                    while ($row = $researchData->fetch_assoc()) {
+                                        echo "<tr>
+                                            <td>{$sn}</td>
+                                            <td>{$row['content']}</td>
+                                            <td>{$row['source']}</td>
+                                            <td><button class='btn btn-primary' onclick='viewContent(\"{$row['content']}\")'>View</button></td>
+                                        </tr>";
+                                        $sn++;
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='4'>No data available</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                <!-- Content for Education Materials -->
+                <div id="educationContent" class="tab-content" style="display: none;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Content</th>
+                                    <th>Source</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Fetch data for education tab
+                                $educationData = fetch_data('education');
+                                if ($educationData->num_rows > 0) {
+                                    $sn = 1;
+                                    while ($row = $educationData->fetch_assoc()) {
+                                        echo "<tr>
+                                            <td>{$sn}</td>
+                                            <td>{$row['content']}</td>
+                                            <td>{$row['source']}</td>
+                                            <td><button class='btn btn-primary' onclick='viewContent(\"{$row['content']}\")'>View</button></td>
+                                        </tr>";
+                                        $sn++;
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='4'>No data available</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                <!-- Content for Library -->
+                <div id="libraryContent" class="tab-content" style="display: none;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Content</th>
+                                    <th>Source</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Fetch data for the library tab
+                                $libraryData = fetch_data('library');
+                                if ($libraryData->num_rows > 0) {
+                                    $sn = 1;
+                                    while ($row = $libraryData->fetch_assoc()) {
+                                        echo "<tr>
+                                            <td>{$sn}</td>
+                                            <td>{$row['content']}</td>
+                                            <td>{$row['source']}</td>
+                                            <td><button class='btn btn-primary' onclick='viewContent(\"{$row['content']}\")'>View</button></td>
+                                        </tr>";
+                                        $sn++;
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='4'>No data available</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
 
 <!-- Footer Start -->   
@@ -231,6 +379,41 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+
+
+
+    
+    <script>
+// JavaScript for displaying tabs content
+function showContent(type) {
+    document.getElementById('researchContent').style.display = 'none';
+    document.getElementById('educationContent').style.display = 'none';
+    document.getElementById('libraryContent').style.display = 'none';
+
+    document.getElementById(type + 'Content').style.display = 'block';
+
+    // Set active tab
+    document.getElementById('researchTab').classList.remove('active');
+    document.getElementById('educationTab').classList.remove('active');
+    document.getElementById('libraryTab').classList.remove('active');
+
+    if (type == 'research') {
+        document.getElementById('researchTab').classList.add('active');
+    } else if (type == 'education') {
+        document.getElementById('educationTab').classList.add('active');
+    } else if (type == 'library') {
+        document.getElementById('libraryTab').classList.add('active');
+    }
+}
+
+function viewContent(content) {
+    alert('Viewing: ' + content);
+}
+</script>
+
+
+</body>
 </html>
+
+
