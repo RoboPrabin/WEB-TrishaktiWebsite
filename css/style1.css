@@ -8,12 +8,12 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif; /* Apply the 'Nunito' font */
+    font-family: 'Roboto', sans-serif; /* Apply the 'Roboto' font */
     background-color: #f4f4f4 !important; /* Set the background color to #f4f4f4 */
   }
 
   h1,h5,h4,h2,h3,p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
 .primary {
