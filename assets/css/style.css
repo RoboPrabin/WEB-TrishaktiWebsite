@@ -1,16 +1,16 @@
 :root {
-    --aster-font: "DM Sans", sans-serif;
-    --aster-gray: #808287;
+    --aster-font: 'Roboto', sans-serif;
+    --aster-gray: black;
     --aster-gray-rgb: 128, 130, 135;
-    --aster-white: #ffffff;
+    --aster-white: #f4f4f4;
     --aster-white-rgb: 255, 255, 255;
-    --aster-base: #ffaa17;
+    --aster-base: #24A148;
     --aster-base-rgb: 255, 170, 23;
     --aster-black: #222429;
     --aster-black-rgb: 34, 36, 41;
-    --aster-primary: #f4f5f9;
+    --aster-primary: #354581;
     --aster-primary-rgb: 244, 245, 249;
-    --aster-secondary: #1b2141;
+    --aster-secondary: #24A148;
 }
 
 .row {
@@ -11937,7 +11937,7 @@ ul {
     background-position: center;
     background-size: cover !important;
     z-index: -1;
-    background: #1b2141;
+    background: #354581;
 }
 
 .page-header__inner {
@@ -13950,7 +13950,7 @@ li:hover
 
         .team-details__contact p a {
             color: var(--aster-black);
-            webkit-transition: all 500ms ease;
+            -webkit-transition: all 500ms ease;
             transition: all 500ms ease;
         }
 
