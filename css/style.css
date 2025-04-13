@@ -26,8 +26,16 @@ body {
 }
 
 
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-
+.form-control {
+    outline: none !important;
+    box-shadow: none !important;
+}
   
 .tab-buttons {
     display: flex;
@@ -212,6 +220,7 @@ color: #F4F4F4;
     border-color: var(--secondary);
     color: #F4F4F4;
 
+
 }
 
 
@@ -257,6 +266,9 @@ color: #F4F4F4;
     width: 48px;
     height: 48px;
 }
+
+
+
 
 .btn-square,
 .btn-sm-square,
