@@ -1,10 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #354581;
+    --primary: #003f8c;
     --secondary: #24A148;
     --tertiary: #555555;
     --light: #f4f4f4;
-    --dark: #354581;
+    --dark: #003f8c;
 }
 
 body {
@@ -17,8 +17,68 @@ body {
   }
 
 .primary {
-    color: #354581;
+    color: #003f8c;
 }
+
+
+.a{
+    color: var(--primary);
+}
+
+
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control {
+    outline: none !important;
+    box-shadow: none !important;
+}
+  
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab-buttons button {
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  
+  .card {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .result {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+  }
+  
+  .profit {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .loss {
+    color: red;
+    font-weight: bold;
+  }
+  
+
+
+
+
+
+
 
 
   /* Styling for the floating icon */
@@ -43,7 +103,7 @@ body {
 }
 
 .floating-icon:hover {
-    background-color: #354581; /* Darken the icon color on hover */
+    background-color: #003f8c; /* Darken the icon color on hover */
 }
 
 
@@ -55,9 +115,11 @@ background-color: #f4f4f4;
     color: #f4f4f4;
 }
 
-.form-select{
-    padding: 12px;
+.form-floating>.form-select {
+    padding-top: 0.75rem;
 }
+
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -118,22 +180,77 @@ h6,
 }
 
 .up-arrow {
-    background-color:#354581; /* Change this to your desired background color */
+    background-color:#003f8c; /* Change this to your desired background color */
     color: #F4F4F4; /* Optional: Change the arrow color if needed */
     transition: background-color 0.3s ease; /* Optional: Smooth transition for background color */
 }
   
 .up-arrow:hover {
-background-color: #354581; /* Optional: Change background color on hover */
+background-color: #003f8c; /* Optional: Change background color on hover */
 color: #F4F4F4;
 }
 
 
-.btn-primary,
-.btn-outline-primary:hover {
+.btn-primary{
     background: var(--primary);
+    border-color: var(--primary);
     color: #F4F4F4;
 }
+.btn-primary:hover{
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+}
+
+.btn-outline-secondary {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+    transition: .5s;
+}
+
+
+.btn-outline-secondary.active {
+    background-color:var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+
+
+}
+
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-check:checked+.btn-outline-primary, .btn-check:active+.btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #F4F4F4;
+}
+
+.btn-outline-primary:hover{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #F4F4F4;
+}
+
+
+
+
+.btn-secondary:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+}
+
+
 
 .btn-square {
     width: 38px;
@@ -149,6 +266,9 @@ color: #F4F4F4;
     width: 48px;
     height: 48px;
 }
+
+
+
 
 .btn-square,
 .btn-sm-square,
@@ -277,7 +397,7 @@ color: #F4F4F4;
 
 
 .dropdown-menu a:hover {
-    background-color: #354581;
+    background-color: #003f8c;
     color: #F4F4F4;
     font-weight: bolder; /* Make text bold on hover */
     border-radius: 10px;
@@ -287,7 +407,6 @@ color: #F4F4F4;
 .dropdown-menu a:active {
     font-weight: bold; /* Make text bold when active (selected) */
 }
-
 
 
 
@@ -371,6 +490,7 @@ color: #F4F4F4;
     margin-right: 10px;  /* Adds space between the logo and text */
 }
 
+
 .page-header {
     padding-top: 12rem;
     padding-bottom: 6rem;
@@ -381,10 +501,28 @@ color: #F4F4F4;
 .page-header .breadcrumb-item,
 .page-header .breadcrumb-item a {
     font-weight: 500;
+
 }
+
+
+.breadcrumb-item a{
+color: var(--primary);
+}
+
+
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+
+
+
+
 
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--tertiary);
+        
 }
 
 .sup{
@@ -398,16 +536,16 @@ color: #F4F4F4;
 } */
 
 .facts {
-    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95)), url(../img/bg1.png);
+    background: linear-gradient(rgba(0, 63, 140, 0.95), rgba(0, 63, 140, 0.95)), url(../img/bg1.png);
 }
 
 .factt {
-    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95)), url(../img/bg2.png);
+    background: linear-gradient(rgba(0, 63, 140, 0.95), rgba(0, 63, 140, 0.95)), url(../img/bg2.png);
 }
 
 /* Gradient color for the .fact class */
 .fact {
-    background: linear-gradient(rgba(53, 69, 129, 0.95), rgba(53, 69, 129, 0.95));
+    background: linear-gradient(rgba(0, 63, 140, 0.95), rgba(0, 63, 140, 0.95));
     -webkit-background-clip: text; /* Ensures gradient applies to text */
     background-clip: text; /* Standard property for compatibility */
     color: transparent; /* Text color transparent to show the gradient */
@@ -512,7 +650,7 @@ color: #F4F4F4;
     height: 50%;
     top: 0;
     left: 0;
-    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url(../img/bg.png);
+    background: linear-gradient(rgba(0, 63, 140, 0.95), rgba(0, 63, 140, 0.95)), url(../img/bg.png);
     z-index: -1;
 }
 
@@ -805,7 +943,7 @@ footer {
     margin-right: 10px;
 }
 
-.footer .btn.btn-link:hover {
+.back-to-top .btn.btn-link:hover {
     color: var(--primary);
     letter-spacing: 1px;
     box-shadow: none;

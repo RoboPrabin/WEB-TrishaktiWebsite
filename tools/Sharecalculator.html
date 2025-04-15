@@ -130,7 +130,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
       <div class="container">
-          <h1 class="display-3 mb-4 animated slideInDown">Share Calculator</h1>
+          <h1 class="display-4 mb-4 animated slideInDown">Share Calculator</h1>
           <nav aria-label="breadcrumb animated slideInDown">
               <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -141,9 +141,9 @@
       </div>
   </div>
   <!-- Page Header End -->
+  <div class="container py-5">
+    <h2 class="mb-2 text-center fw-bold text-primary">📈 Share Calculator</h2>
 
-
-  
     <div class="container mb-5 py-5 ">
         <div class="tab-buttons">
           <button id="showBuy" class="btn btn-outline-primary active">Buy Calculator</button>
@@ -152,7 +152,7 @@
       
         <!-- Buy Section -->
         <div id="buySection" class="card p-4">
-          <h4>Buy Calculator</h4>
+          <h4>Enter Details</h4>
           <div class="row g-3">
             <div class="col-md-6">
               <label>Price per Share</label>
@@ -162,23 +162,48 @@
               <label>Quantity</label>
               <input type="number" class="form-control" id="quantity" />
             </div>
-            <div class="col-12">
-              <button id="buyCalculate" class="btn btn-success">Calculate</button>
-              <button id="clearFieldsBuy" class="btn btn-outline-secondary">Clear</button>
+            <div class="d-flex justify-content">
+              <button id="calculate" class="btn btn-primary me-2"><i class="fas fa-calculator me-2"></i>Calculate</button>
+              <button id="clearFields" class="btn btn-outline-secondary"><i class="fas fa-redo-alt me-2"></i>Clear</button>
             </div>
           </div>
-          <div class="result mt-3">
-            <p><strong>Total Amount:</strong> Rs. <span id="totalAmount">0</span></p>
-            <p><strong>Broker Commission:</strong> Rs. <span id="brokerCom">0</span></p>
-            <p><strong>Sebon Fee:</strong> Rs. <span id="sebonFee">0</span></p>
-            <p><strong>DP Charge:</strong> Rs. <span id="dpCharge">0</span></p>
-            <p><strong>Total Payable:</strong> Rs. <span id="sumTotal">0</span></p>
-            <p><strong>Cost Per Share:</strong> Rs. <span id="costPerShare">0</span></p>
+          <!-- Result Display -->
+          <div class="col-lg-6 mt-5">
+            <div id="calculate_value" class="card shadow-sm p-4 border-light">
+              <h4 class="mb-3 text-secondary">Purchase Calculation Details</h4>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total Amount</span>
+                  <strong id="totalAmount">0</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Broker Commission</span>
+                  <strong id="brokerCom">0</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Sebon Fee</span>
+                  <strong id="sebonFee">0</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>DP Charge</span>
+                  <strong id="dpCharge">0</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between fw-bold text-primary">
+                  <span>Total Payable</span>
+                  <strong id="sumTotal">0</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between fw-bold text-primary">
+                  <span>Cost Per Share</span>
+                  <strong id="costPerShare">0</strong>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       
         <div id="sellSection" class="card p-4 hidden">
-          <h4>Sell Calculator</h4>
+          <h4>Enter Details</h4>
           <div class="row g-3">
             <div class="col-md-4">
               <label>Selling Price</label>
@@ -200,34 +225,62 @@
               </div>
             </div>
             <div class="col-12">
-              <button id="sellCalculate" class="btn btn-success">Calculate</button>
-              <button id="clearFieldsSell" class="btn btn-outline-secondary">Clear</button>
-            </div>
+              <div class="d-flex justify-content">
+                <button id="calculate" class="btn btn-primary me-2"><i class="fas fa-calculator me-2"></i>Calculate</button>
+                <button id="clearFields" class="btn btn-outline-secondary"><i class="fas fa-redo-alt me-2"></i>Clear</button>
+              </div>
           </div>
-          <div class="result mt-3">
-            <p><strong>Total Sale:</strong> Rs. <span id="totalSale">0</span></p>
-            <p><strong>Broker Commission:</strong> Rs. <span id="saleBrokerCom">0</span></p>
-            <p><strong>Sebon Fee:</strong> Rs. <span id="saleSebonFee">0</span></p>
-            <p><strong>DP Charge:</strong> Rs. <span id="saleDpCharge">0</span></p>
-            <p><strong>Capital Gain Tax:</strong> Rs. <span id="capitalTax">0</span></p>
-            <p><strong>Total Receivable:</strong> Rs. <span id="totalReceivable">0</span></p>
+      <!-- Result Display -->
+      <div class="col-lg-6 mt-5">
+        <div id="calculate_value" class="card shadow-sm p-4 border-light">
+          <h4 class="mb-3 text-secondary">Sale Calculation Details</h4>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total Sale</span>
+              <strong id="totalSale">0</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Broker Commission</span>
+              <strong id="saleBrokerCom">0</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Sebon Fee</span>
+              <strong id="saleSebonFee">0</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>DP Charge</span>
+              <strong id="saleDpCharge">0</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Capital Gain Tax</span>
+              <strong id="capitalTax">0</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between fw-bold text-primary">
+              <span>Total Receivable</span>
+              <strong id="totalReceivable">0</strong>
+            </li>
+          </ul>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
 
     <!-- Copyright Start -->
     <div id="stickyFooterwrap" class="container-fluid facts py-sm-3">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
-                &copy; <a class="border-bottom text-white" href="#">Trishakti Securities</a>, All Right Reserved.
-            </div>
-            <div class="col-md-6 text-center text-md-end text-white">
-                Designed By <a class="border-bottom text-white" href="#">Trishakti Securities Teams</a>
-            </div>
-        </div>
-    </div>    
-    <!-- Copyright End -->
+      <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
+              &copy; <a class="border-bottom text-white" href="#">Trishakti Securities</a>, All Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end text-white">
+              Designed By <a class="border-bottom text-white" href="#">Aayush Pokharel</a>
+          </div>
+      </div>
+  </div>    
+  <!-- Copyright End -->
 
 
 

@@ -25,6 +25,20 @@ body {
     color: var(--primary);
 }
 
+.text-primary {
+    color: var(--primary) !important;
+}
+
+
+.calculator-container{
+    background-color: white;
+    border-radius: 8px;
+
+}
+
+
+
+
 
 button:focus,
 button:focus-visible {
@@ -73,10 +87,6 @@ button:focus-visible {
     font-weight: bold;
   }
   
-
-
-
-
 
 
 
@@ -191,6 +201,21 @@ color: #F4F4F4;
 }
 
 
+
+.btn-success {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #F4F4F4;
+}
+
+
+.btn-success:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+}
+
+
 .btn-primary{
     background: var(--primary);
     border-color: var(--primary);
@@ -208,8 +233,8 @@ color: #F4F4F4;
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+    background-color: var(--primary);
+    border-color: var(--primary);
     color: #F4F4F4;
     transition: .5s;
 }
@@ -614,6 +639,9 @@ color: var(--primary);
         font-size: 0.8rem; /* Further reduce font size for extremely small screens */
     }
 }
+
+
+
 
 
 
