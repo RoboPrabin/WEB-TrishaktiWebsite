@@ -14,16 +14,56 @@ body {
 
   h1,h5,h4,h2,h3,p {
     font-family: 'Roboto', sans-serif;
+    color: black;
   }
 
 .primary {
     color: #003f8c;
 }
 
-
+.text-light {
+    color: #f4f4f4 !important;
+}
 .a{
     color: var(--primary);
 }
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+
+.calculator-container{
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+
+.list-group-item {
+    color: black; /* Default (non-active) text color */
+    background-color: #fff; /* Optional: ensure background stays white */
+    border: 1px solid #ddd; /* Optional: light border */
+    font-size: larger
+}
+
+.list-group-item:hover {
+    color: #000; /* Hover text color */
+}
+
+.list-group-item.active {
+    background-color: #003f8c; /* Bootstrap default active bg color */
+    color: white !important;   /* Force white text for active */
+    border-color: #003f8c;     /* Match the border with background */
+}
+
+.padd{
+    padding: 4rem 0rem 2rem 1px;
+
+}
+
+
+
 
 
 button:focus,
@@ -73,10 +113,6 @@ button:focus-visible {
     font-weight: bold;
   }
   
-
-
-
-
 
 
 
@@ -191,6 +227,21 @@ color: #F4F4F4;
 }
 
 
+
+.btn-success {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #F4F4F4;
+}
+
+
+.btn-success:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #F4F4F4;
+}
+
+
 .btn-primary{
     background: var(--primary);
     border-color: var(--primary);
@@ -208,8 +259,8 @@ color: #F4F4F4;
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+    background-color: var(--primary);
+    border-color: var(--primary);
     color: #F4F4F4;
     transition: .5s;
 }
@@ -618,6 +669,9 @@ color: var(--primary);
 
 
 
+
+
+
 .fon{
     color: #4174cf;
 }
@@ -943,11 +997,17 @@ footer {
     margin-right: 10px;
 }
 
-.back-to-top .btn.btn-link:hover {
+.footer .btn.btn-link:hover {
     color: var(--primary);
     letter-spacing: 1px;
     box-shadow: none;
 }
+
+
+
+
+
+
 
 .copyright {
     color: var(--light);
@@ -961,3 +1021,6 @@ footer {
 .copyright a:hover {
     color: var(--primary);
 }
+
+
+
