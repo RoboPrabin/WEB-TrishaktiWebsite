@@ -26,7 +26,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -36,8 +36,8 @@
 
 
   <!-- Navbar -->
-  <div id="stickyHeaderwrap" class="container-fluid fixed-top px-0 mt-1 text-dark wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
+  <div id="stickyHeaderwrap" class="container-fluid fixed-top px-0 text-dark wow fadeIn" data-wow-delay="0.1s">
+    <div class="top-bar row gx-0 align-items-center d-none mt-1 d-lg-flex">
       <div class="col-lg-6 px-5 text-start">
         <small><i class="fa fa-map-marker-alt primary me-2"></i>7th floor, Start Mall, Putalisadak, Kathmandu</small>
         <small class="ms-4"><i class="fa fa-clock primary me-2"></i>09:30 am - 5:30 pm</small>
@@ -73,7 +73,7 @@
               <a href="../tools/weightedaverage.html" class="dropdown-item">Weighted Avg Calculator</a>
               <a href="../tools/sipcalculator.html" class="dropdown-item">SIP Calculator</a>
               <a href="../tools/emicalculator.html" class="dropdown-item">EMI Calculator</a>
-              <a href="../tools/payrolcalculator.html" class="dropdown-item">Payroll Tax Calculator</a>
+              <!-- <a href="../tools/payrolcalculator.html" class="dropdown-item">Payroll Tax Calculator</a> -->
             </div>
           </div>
 
@@ -107,85 +107,84 @@
   <!-- Page Header -->
   <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
-      <h1 class="display-4 mb-4 animated slideInDown">Weighted Average Calculator</h1>
+      <h1 class="display-4 mb-4 animated slideInDown">EMI Calculator</h1>
       <nav aria-label="breadcrumb animated slideInDown">
         <ol class="breadcrumb mb-0">
           <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="../market.html">Market</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Weighted Avg. Calculator</li>
+          <li class="breadcrumb-item active" aria-current="page">EMI Calculator</li>
         </ol>
       </nav>
     </div>
   </div>
 
   <div class="container py-5">
-    <h2 class="text-center mb-5">📊 SIP Calculator</h2>
-
+    <h1 class="text-center mb-5">💸 EMI Calculator</h1>    
     <div class="row g-4">
-      <!-- Left: Form -->
+      
+
+  
+      <!-- Right: Inputs -->
       <div class="col-md-6">
         <div class="card shadow p-4">
-          <h5 class="mb-3 text-dark">Enter Your Details</h5>
+          <h4 class="mb-3 text-dark">Enter Your Details</h4>
+          <div class="mb-3">
+            <label for="principal" class="form-label">Loan Amount</label>
+            <input type="number" id="principal" class="form-control" placeholder="Enter Numbers Only">
+          </div>
+          <div class="mb-3">
+            <label for="rate" class="form-label">Annual Interest Rate (%)</label>
+            <input type="number" id="rate" class="form-control" placeholder="Enter Numbers Only">
+          </div>
+          <div class="mb-3">
+            <label for="time" class="form-label">Loan Term (in months)</label>
+            <input type="number" id="time" class="form-control" placeholder="Enter Numbers Only">
+          </div>
+          <div id="errorMsg" class="error-text text-danger small"></div>
+  
+          <!-- <div class="d-flex justify-content-between">
+            <button class="btn btn-primary w-50 me-2" id="calculateBtn"><i class="fas fa-calculator me-2"></i>Calculate</button>
+            <button class="btn btn-secondary w-50" id="clearBtn"><i class="fas fa-redo-alt me-2"></i>Clear</button>
+          </div> -->
 
-          <form id="sipForm">
-            <div class="mb-3">
-              <label for="inv_type" class="form-label">Investment Frequency</label>
-              <select class="form-select" id="inv_type">
-                <option value="1">Monthly</option>
-                <option value="2">Quarterly</option>
-                <option value="3">Semi-Annually</option>
-                <option value="4">Annually</option>
-              </select>
-            </div>
 
-            <div class="mb-3">
-              <label for="investment" class="form-label">Investment Amount (Rs)</label>
-              <input type="number" class="form-control" id="investment" placeholder="Amount (Rs)">
-            </div>
+          <div class="d-flex justify-content-between">
+            <button type="submit" id="calculateBtn" class="btn btn-primary w-50 me-2"><i class="fas fa-calculator me-2"></i>Calculate</button>
+            <button type="button" id="clearBtn" class="btn btn-outline-secondary w-50"><i class="fas fa-redo-alt me-2"></i>Clear</button>
+          </div>
 
-            <div class="mb-3">
-              <label for="return" class="form-label">Expected Annual Return (%)</label>
-              <input type="number" class="form-control" id="return" placeholder="Annual Return (%)">
-            </div>
 
-            <div class="mb-3">
-              <label for="time" class="form-label">Investment Duration (Years)</label>
-              <input type="number" class="form-control" id="time" placeholder="Duration (Years)">
-            </div>
-
-            <span id="errorSpan" class="text-danger mb-3 d-block"></span>
-
-            <div class="d-flex gap-2">
-              <button type="submit" id="submit" class="btn btn-primary">Calculate</button>
-              <button type="button" id="clearFields" class="btn btn-outline-secondary">Clear</button>
-            </div>
-          </form>
         </div>
       </div>
 
       <!-- Right: Results -->
-      <div class="col-lg-6">
+      <div class="col-md-6">
         <div id="calculate_value" class="card shadow-sm p-4 border-light">
           <h4 class="mb-3 text-dark">Calculation Details</h4>
+          <div class="my-3 mx-3 d-flex justify-content-between">
+            <h3 class="text-primary">Monthly EMI:</h3>
+            <h3 id="emiResult" class="text-primary justify-content-between"> 0.00</h3>
+          </div>
           <ul class="list-group list-group-flush">
+            <!-- <div class="mb-3">
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total Investment</span>
-              <strong id="totalInvest">0</strong>
+              <span><h3>Monthly EMI</h3></span>
+              <strong id="emiResult"><h3>0.00</h3></strong>
+            </li>
+            </div> -->
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total Payment</span>
+              <strong id="totalPayment"> 0.00</strong>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Estimated Returns</span>
-              <strong id="totalReturn">0</strong>
-            </li>
-            <li class="list-group-item d-flex justify-content-between fw-bold text-primary">
-              <span>Total Value</span>
-              <strong id="total">0</strong>
+              <span>Total Interest</span>
+              <strong id="totalInterest"> 0.00</strong>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
 
 
 
@@ -220,72 +219,42 @@
 
 <!-- JS Logic -->
 <script>
-  $(document).ready(function () {
-    var selectedValue = 1;
+  document.getElementById('calculateBtn').addEventListener('click', function (e) {
+    e.preventDefault();
 
-    $('#inv_type').on('change', function () {
-      selectedValue = $(this).val();
-    });
+    const principal = parseFloat(document.getElementById('principal').value);
+    const annualRate = parseFloat(document.getElementById('rate').value);
+    const months = parseInt(document.getElementById('time').value);
 
-    $('#submit').on('click', function (event) {
-      event.preventDefault();
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.textContent = "";
 
-      var principal = parseFloat($('#investment').val());
-      var xreturn = parseFloat($('#return').val());
-      var time = parseFloat($('#time').val());
+    if (isNaN(principal) || isNaN(annualRate) || isNaN(months) ||
+        principal <= 0 || annualRate <= 0 || months <= 0) {
+      errorMsg.textContent = "Please enter valid, positive numbers in all fields.";
+      return;
+    }
 
-      if (isNaN(principal) || isNaN(xreturn) || isNaN(time)) {
-        $('#errorSpan').text('Enter all values required');
-        return;
-      }
+    const monthlyRate = annualRate / (12 * 100); // Convert to decimal monthly rate
+    const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+                (Math.pow(1 + monthlyRate, months) - 1);
+    const totalPayment = emi * months;
+    const totalInterest = totalPayment - principal;
 
-      if (principal <= 0 || xreturn <= 0 || xreturn > 100 || time <= 0) {
-        $('#errorSpan').text('Enter valid values');
-        return;
-      }
+    // Output results
+    document.getElementById('emiResult').textContent = `Rs. ${emi.toFixed(2).toLocaleString()}`;
+    document.getElementById('totalPayment').textContent = `Rs. ${totalPayment.toFixed(2).toLocaleString()}`;
+    document.getElementById('totalInterest').textContent = `Rs. ${totalInterest.toFixed(2).toLocaleString()}`;
+  });
 
-      $('#errorSpan').text('');
-
-      let no_of_payments, periodic_interest_rate;
-
-      switch (parseInt(selectedValue)) {
-        case 1: // Monthly
-          no_of_payments = 12 * time;
-          periodic_interest_rate = (xreturn / 100) / 12;
-          break;
-        case 2: // Quarterly
-          no_of_payments = 4 * time;
-          periodic_interest_rate = (xreturn / 100) / 4;
-          break;
-        case 3: // Semi-Annually
-          no_of_payments = 2 * time;
-          periodic_interest_rate = (xreturn / 100) / 2;
-          break;
-        case 4: // Annually
-          no_of_payments = 1 * time;
-          periodic_interest_rate = (xreturn / 100) / 1;
-          break;
-      }
-
-      var totalInvest = principal * no_of_payments;
-      var sip = principal * (((Math.pow(1 + periodic_interest_rate, no_of_payments) - 1) / periodic_interest_rate) * (1 + periodic_interest_rate));
-      var totalReturn = sip - totalInvest;
-
-      $('#totalInvest').text(totalInvest.toFixed(2));
-      $('#totalReturn').text(totalReturn.toFixed(2));
-      $('#total').text(sip.toFixed(2));
-    });
-
-    $('#clearFields').click(function () {
-      $('#inv_type').val('1');
-      $('#investment').val('');
-      $('#return').val('');
-      $('#time').val('');
-      $('#totalInvest').text(0);
-      $('#totalReturn').text(0);
-      $('#total').text(0);
-      $('#errorSpan').text('');
-    });
+  document.getElementById('clearBtn').addEventListener('click', function () {
+    document.getElementById('principal').value = '';
+    document.getElementById('rate').value = '';
+    document.getElementById('time').value = '';
+    document.getElementById('emiResult').textContent = ' 0.00';
+    document.getElementById('totalPayment').textContent = ' 0.00';
+    document.getElementById('totalInterest').textContent = ' 0.00';
+    document.getElementById('errorMsg').textContent = '';
   });
 </script>
 

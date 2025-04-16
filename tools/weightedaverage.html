@@ -26,7 +26,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
@@ -36,8 +36,8 @@
 
 
   <!-- Navbar -->
-  <div id="stickyHeaderwrap" class="container-fluid fixed-top px-0 mt-1 text-dark wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
+  <div id="stickyHeaderwrap" class="container-fluid fixed-top px-0 text-dark wow fadeIn" data-wow-delay="0.1s">
+    <div class="top-bar row gx-0 align-items-center mt-1 d-none d-lg-flex">
       <div class="col-lg-6 px-5 text-start">
         <small><i class="fa fa-map-marker-alt primary me-2"></i>7th floor, Start Mall, Putalisadak, Kathmandu</small>
         <small class="ms-4"><i class="fa fa-clock primary me-2"></i>09:30 am - 5:30 pm</small>
@@ -73,7 +73,7 @@
               <a href="../tools/weightedaverage.html" class="dropdown-item">Weighted Avg Calculator</a>
               <a href="../tools/sipcalculator.html" class="dropdown-item">SIP Calculator</a>
               <a href="../tools/emicalculator.html" class="dropdown-item">EMI Calculator</a>
-              <a href="../tools/payrolcalculator.html" class="dropdown-item">Payroll Tax Calculator</a>
+              <!-- <a href="../tools/payrolcalculator.html" class="dropdown-item">Payroll Tax Calculator</a> -->
             </div>
           </div>
 
@@ -136,7 +136,7 @@
           <button class="btn btn-success" onclick="addRow('secondary')"><i class="fas fa-plus me-2"></i>Add Row</button>
           <button class="btn btn-primary my-3" onclick="calculate('secondary')"><i class="fas fa-calculator me-2"></i>Calculate</button>
           <button class="btn btn-outline-secondary my-3" onclick="clearFields('secondary')"><i class="fas fa-redo-alt me-2"></i>Clear</button>
-          <h5 class="mt-3">Weighted Average Price: Rs <strong id="secondaryAverage"></strong></h5>
+          <h4 class="mt-3 text-primary">Weighted Average Price: Rs <strong id="secondaryAverage"></strong></h4>
         </div>
 
         <!-- IPO Tab -->
@@ -146,7 +146,7 @@
           <button class="btn btn-success" onclick="addRow('secondary')"><i class="fas fa-plus me-2"></i>Add Row</button>
           <button class="btn btn-primary my-3" onclick="calculate('ipo')"><i class="fas fa-calculator me-2"></i>Calculate</button>
           <button class="btn btn-outline-secondary my-3" onclick="clearFields('ipo')"><i class="fas fa-redo-alt me-2"></i>Clear</button>
-          <h5 class="mt-3">Weighted Average Price: Rs <strong id="ipoAverage"></strong></h5>
+          <h4 class="mt-3 text-primary">Weighted Average Price: Rs <strong id="ipoAverage"></strong></h4>
         </div>
       </div>
     </div>
