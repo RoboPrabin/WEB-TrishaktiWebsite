@@ -18,8 +18,8 @@ body {
   }
 
   p {
-    text-align: justify;
-    text-justify: inter-word;
+      text-align: justify;
+  text-justify: inter-word;
   }
 
 .primary {
@@ -696,6 +696,11 @@ color: var(--primary);
     font-size: 2.5rem; /* Default font size for large screens */
 }
 
+/* .carousel-indicators{
+       background-color: #ffffff;
+
+} */
+
 
 /* Adjust font size for medium screens */
 @media (max-width: 1440px) {
@@ -740,21 +745,35 @@ color: var(--primary);
 /* Even smaller font size for very small screens */
 @media (max-width: 576px) {
     .fact {
-        font-size: 1.2rem; /* Further reduce font size for very small screens */
+        font-size: 1.3rem; /* Further reduce font size for very small screens */
     }
 }
 
 /* For screens smaller than 400px */
 @media (max-width: 400px) {
     .fact {
-        font-size: 1rem; /* Reduce font size to fit very small screens */
+        font-size: 1.3rem; /* Reduce font size to fit very small screens */
     }
 }
 
 /* For screens smaller than 200px (extremely small screens, like feature phones) */
-@media (max-width: 200px) {
+@media (max-width: 300px) {
     .fact {
-        font-size: 0.8rem; /* Further reduce font size for extremely small screens */
+        font-size: 1rem; /* Further reduce font size for extremely small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 259px) {
+    .fact {
+        font-size: 0.9rem; /* Reduce font size to fit very small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 245px) {
+    .fact {
+        font-size: 0.8rem; /* Reduce font size to fit very small screens */
     }
 }
 
