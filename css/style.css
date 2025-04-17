@@ -854,6 +854,14 @@ color: var(--primary);
     color: #F4F4F4 !important;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--primary) !important;
+    border-radius: 10px;
+
+
+
 
 /*** Project ***/
 .project-item,
