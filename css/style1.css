@@ -339,7 +339,7 @@ color: #F4F4F4;
 
 /* Styling for the top-bar content */
 .top-bar .col-lg-6 small {
-    font-size: 1rem; /* Default font size for larger screens */
+    font-size: 0.8rem; /* Default font size for larger screens */
 }
 
 /* Adjust font size for larger screens */
@@ -354,32 +354,51 @@ color: #F4F4F4;
     }
 }
 
-
-@media (max-width: 1200px) {
+@media (min-width: 1201px) {
     .top-bar .col-lg-6 medium {
         font-size: 0.8rem; /* Smaller font size for tablets and medium-sized screens */
     }
 }
 
+
+@media (max-width: 1200px) {
+    .top-bar .col-lg-6 medium {
+        font-size: 0.75rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
 @media (max-width: 1100px) {
     .top-bar .col-lg-6 small {
-        font-size: 0.65rem; /* Smaller font size for tablets and medium-sized screens */
+        font-size: 0.75rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
+
+/* Adjust font size for tablets and smaller laptops */
+@media (max-width: 1064px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.68rem; /* Adjust font size further for smaller screens */
     }
 }
 
 /* Adjust font size for tablets and smaller laptops */
 @media (max-width: 1024px) {
     .top-bar .col-lg-6 small {
-        font-size: 0.67rem; /* Adjust font size further for smaller screens */
+        font-size: 0.66rem; /* Adjust font size further for smaller screens */
     }
 }
 
-@media (max-width: 995px) {
+@media (min-width: 1001px) and (max-width: 1007px) {
     .top-bar .col-lg-6 small {
-        font-size: 0.6rem; /* Smaller font size for tablets and medium-sized screens */
+        font-size: 0.65rem; /* Smaller font size for tablets and medium-sized screens */
     }
 }
+/* @media (min-width: 601px) and (max-width: 999px) { */
 
+@media (min-width: 990px) and (max-width: 1000px) {
+    .top-bar .col-lg-6 small {
+        font-size: 0.63rem; /* Smaller font size for tablets and medium-sized screens */
+    }
+}
 
 /* Adjust font size for mobile screens */
 @media (max-width: 768px) {
@@ -408,6 +427,12 @@ color: #F4F4F4;
         font-size: 0.5rem; /* Further reduce font size for extremely small screens */
     }
 }
+
+
+
+
+
+
 
 
 .navbar .dropdown-toggle::after {
@@ -639,7 +664,7 @@ color: var(--primary);
 }
 
 /* Adjust font size for mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .fact {
         font-size: 1.6rem; /* Smaller font size for mobile screens */
     }
@@ -1003,6 +1028,28 @@ footer {
     box-shadow: none;
 }
 
+footer {
+    font-size: 1rem; /* Default size */
+}
+@media (max-width: 876px) {
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 795px) {
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+
 
 
 
@@ -1021,6 +1068,3 @@ footer {
 .copyright a:hover {
     color: var(--primary);
 }
-
-
-
