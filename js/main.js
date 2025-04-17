@@ -87,6 +87,26 @@
 
 // end of market link blinking effect
 
+
+
+
+    // // Wait until the DOM is fully loaded
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const navLinks = document.querySelectorAll(".nav-link");
+
+    //     navLinks.forEach(link => {
+    //         link.addEventListener("click", function () {
+    //             // Remove 'active' from all nav links
+    //             navLinks.forEach(l => l.classList.remove("active"));
+    //             // Add 'active' to the clicked link
+    //             this.classList.add("active");
+    //         });
+    //     });
+    // });
+
+
+    
+
     
     // Back to top button
     $(window).scroll(function () {

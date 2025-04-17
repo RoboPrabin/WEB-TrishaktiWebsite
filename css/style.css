@@ -43,15 +43,15 @@ body {
 /* market blinker */
 /* Only text blinks with color pulse */
 .blink {
-    color: #24A148 !important;
+    color:  #24A148!important;
     font-weight: bold;
     /* text-shadow: 0 0 2px #24A148, 0 0 2px #003f8c; */
+    text-shadow: 0 0 1px #24A148;
     padding: 2px 6px;
-    /* background: linear-gradient(45deg, #F4F4F4, #24A148); */
     display: inline-block;
     width: 100px; /* Fixed width */
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
     animation: text-blink 1s ease-in-out infinite; /* text-only animation */
