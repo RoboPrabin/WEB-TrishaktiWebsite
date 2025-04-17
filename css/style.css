@@ -43,9 +43,9 @@ body {
 /* market blinker */
 /* Only text blinks with color pulse */
 .blink {
-    color: red !important;
+    color: #24A148 !important;
     font-weight: bold;
-    text-shadow: 0 0 5px #24A148, 0 0 10px #003f8c;
+    /* text-shadow: 0 0 2px #24A148, 0 0 2px #003f8c; */
     padding: 2px 6px;
     /* background: linear-gradient(45deg, #F4F4F4, #24A148); */
     display: inline-block;
