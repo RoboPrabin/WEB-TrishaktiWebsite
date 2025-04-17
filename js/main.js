@@ -57,11 +57,35 @@
         });
     });
     
+// Market link blinking effect
+    // Function to update the blinking effect based on time
+    
+    function updateMarketBlink() {
+        // Nepal is UTC+5:45
+        const now = new Date();
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const nepalTime = new Date(utc + (5.75 * 3600000));
 
+        const day = nepalTime.getDay(); // 0 = Sunday, 6 = Saturday
+        const hour = nepalTime.getHours();
 
+        const isSundayToThursday = day >= 0 && day <= 4;
+        const isBetween11And15 = hour >= 11 && hour < 15;
 
+        const marketLink = document.getElementById("marketLink");
 
+        if (isSundayToThursday && isBetween11And15) {
+            marketLink.classList.add("blink");
+        } else {
+            marketLink.classList.remove("blink");
+        }
+    }
 
+    // Check every minute
+    updateMarketBlink();
+    setInterval(updateMarketBlink, 60000);
+
+// end of market link blinking effect
 
     
     // Back to top button

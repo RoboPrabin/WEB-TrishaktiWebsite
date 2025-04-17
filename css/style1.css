@@ -40,43 +40,34 @@ body {
 
 
 
-
 /* market blinker */
-/* Enhanced blinking with scale and color pulse */
+/* Only text blinks with color pulse */
 .blink {
-    animation: blinker 1s ease-in-out infinite;
-    color: #003f8c !important;
+    color: red !important;
     font-weight: bold;
     text-shadow: 0 0 5px #24A148, 0 0 10px #003f8c;
-    border-radius: 15px;
     padding: 2px 6px;
-    background: linear-gradient(45deg, #F4F4F4, #24A148);
+    /* background: linear-gradient(45deg, #F4F4F4, #24A148); */
     display: inline-block;
     width: 100px; /* Fixed width */
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    animation: text-blink 1s ease-in-out infinite; /* text-only animation */
 }
 
-@keyframes blinker {
+@keyframes text-blink {
     0%, 100% {
+        color: #003f8c;
         opacity: 1;
-        transform: scale(1);
     }
     50% {
-        opacity: 0.4;
-        transform: scale(1.05);
+        color: #24A148;
+        opacity: 0.6;
     }
 }
 
-/* Optional: Smooth hover effect */
-#marketLink:hover {
-    background-color: #003f8c !important;
-    color: #24A148 !important;
-    box-shadow: 0 0 10px #003f8c;
-    transition: all 0.3s ease-in-out;
-}
 /* market blinker ends */
 
 

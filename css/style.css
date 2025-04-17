@@ -40,6 +40,38 @@ body {
 
 
 
+/* market blinker */
+/* Only text blinks with color pulse */
+.blink {
+    color: red !important;
+    font-weight: bold;
+    text-shadow: 0 0 5px #24A148, 0 0 10px #003f8c;
+    padding: 2px 6px;
+    /* background: linear-gradient(45deg, #F4F4F4, #24A148); */
+    display: inline-block;
+    width: 100px; /* Fixed width */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: text-blink 1s ease-in-out infinite; /* text-only animation */
+}
+
+@keyframes text-blink {
+    0%, 100% {
+        color: #003f8c;
+        opacity: 1;
+    }
+    50% {
+        color: #24A148;
+        opacity: 0.6;
+    }
+}
+
+/* market blinker ends */
+
+
+
 .list-group-item {
     color: black; /* Default (non-active) text color */
     background-color: #fff; /* Optional: ensure background stays white */
