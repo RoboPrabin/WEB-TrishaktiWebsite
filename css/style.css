@@ -17,6 +17,11 @@ body {
     color: black;
   }
 
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
 .primary {
     color: #003f8c;
 }
