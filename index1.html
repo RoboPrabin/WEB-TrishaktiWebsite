@@ -27,7 +27,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 </head>
 
@@ -83,7 +83,8 @@
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="market.html" class="nav-item nav-link">Markets</a>
+                    <a href="market.html" class="nav-item nav-link" id="marketLink">Markets</a>
+
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tools</a>
@@ -434,6 +435,35 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
+
+
+    <script>
+        function updateMarketBlink() {
+            // Nepal is UTC+5:45
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const nepalTime = new Date(utc + (5.75 * 3600000));
+    
+            const day = nepalTime.getDay(); // 0 = Sunday, 6 = Saturday
+            const hour = nepalTime.getHours();
+    
+            const isSundayToThursday = day >= 0 && day <= 4;
+            const isBetween11And15 = hour >= 11 && hour < 15;
+    
+            const marketLink = document.getElementById("marketLink");
+    
+            if (isSundayToThursday && isBetween11And15) {
+                marketLink.classList.add("blink");
+            } else {
+                marketLink.classList.remove("blink");
+            }
+        }
+    
+        // Check every minute
+        updateMarketBlink();
+        setInterval(updateMarketBlink, 60000);
+    </script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

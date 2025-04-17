@@ -40,6 +40,47 @@ body {
 
 
 
+
+/* market blinker */
+/* Enhanced blinking with scale and color pulse */
+.blink {
+    animation: blinker 1s ease-in-out infinite;
+    color: #003f8c !important;
+    font-weight: bold;
+    text-shadow: 0 0 5px #24A148, 0 0 10px #003f8c;
+    border-radius: 15px;
+    padding: 2px 6px;
+    background: linear-gradient(45deg, #F4F4F4, #24A148);
+    display: inline-block;
+    width: 100px; /* Fixed width */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes blinker {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.05);
+    }
+}
+
+/* Optional: Smooth hover effect */
+#marketLink:hover {
+    background-color: #003f8c !important;
+    color: #24A148 !important;
+    box-shadow: 0 0 10px #003f8c;
+    transition: all 0.3s ease-in-out;
+}
+/* market blinker ends */
+
+
+
 .list-group-item {
     color: black; /* Default (non-active) text color */
     background-color: #fff; /* Optional: ensure background stays white */
@@ -428,7 +469,37 @@ color: #F4F4F4;
     }
 }
 
+/* for the text index */
+/* Default size (big screens) */
+.carousel-caption p {
+    font-size: 1rem;
+}
 
+.carousel-caption h1 {
+    font-size: 4rem;
+}
+
+/* Medium screens (like tablets) */
+@media (max-width: 1200px) {
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* Small screens (like phones) */
+@media (max-width: 576px) {
+    .carousel-caption p {
+        font-size: 0.875rem;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+}
 
 
 
