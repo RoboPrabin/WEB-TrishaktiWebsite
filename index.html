@@ -127,15 +127,40 @@
             
         </nav>
     </div>
-    <!-- Navbar End -->
+
+
+        <!-- Navbar End -->
+<!-- Sub Icons on the left (for login) -->
+<div class="sub-icons" id="subIcons">
+    <a class="sub-icon-wrapper" href="https://kyc.trishakti.com.np/kyc/" target="_blank">
+      <div class="sub-icon">🔑</div>
+      <span class="icon-label">Broker Login</span>
+    </a>
+    <a class="sub-icon-wrapper" href="https://tms48.nepsetms.com.np/login" target="_blank">
+      <div class="sub-icon">📈</div>
+      <span class="icon-label">TMS Login</span>
+    </a>
+    <a class="sub-icon-wrapper" href="https://meroshare.cdsc.com.np/" target="_blank">
+      <div class="sub-icon">💼</div>
+      <span class="icon-label">MeroShare</span>
+    </a>
+  </div>
+  
+
+          <!-- Floating learn icon (right side) -->
+    <div class="floating-icon learn" onclick="window.location.href='learn.html';">
+        📚
+    </div>
 
 
 
+    <!-- Floating login icon (left side) -->
+    <div class="floating-icon login" onclick="toggleSubIcons()">
+        🔐
+        <span class="icon-label">LOGIN</span>
+    </div>
 
-    <!-- Floating rounded icon -->
-        <div class="floating-icon" onclick="window.location.href='learn.html';">
-            📚
-        </div>
+
 
 
 
@@ -433,6 +458,15 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
+
+    <script>
+        document.querySelector('.floating-icon.login').addEventListener('click', () => {
+          document.querySelector('.sub-icons').classList.toggle('active');
+        });
+      </script>
+      
+
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
