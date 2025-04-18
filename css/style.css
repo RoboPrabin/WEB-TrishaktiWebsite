@@ -1176,7 +1176,7 @@ footer {
   }
 
   .filter-btn.active {
-    background-color: #0d6efd;
+    background-color: var(--primary);
     color: #fff;
   }
 
