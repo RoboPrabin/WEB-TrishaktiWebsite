@@ -1130,305 +1130,434 @@ footer {
 }
 
 
-/* gallery style */
-.gallery-section {
-    padding: 60px 0;
+
+/* gallery */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
-  .gallery-sidebar {
-    position: sticky;
-    top: 100px;
+
+
+  .gallery-container {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 30px;
   }
 
-  .filter-btn {
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 12px 20px;
-    font-weight: 600;
+
+
+  /* Filter buttons */
+  .filter-buttons {
+    text-align: center;
+    margin-bottom: 30px;
   }
 
-  .filter-btn.active {
-    background-color: var(--primary);
+  .filter-buttons button {
+    background: #eee;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-buttons button.active,
+  .filter-buttons button:hover {
+    background: #333;
     color: #fff;
   }
 
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
   .gallery-item {
-    display: none;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .gallery-item.show {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s ease;
     display: block;
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 
   .gallery-item img {
     width: 100%;
-    border-radius: 12px;
+    height: auto;
+    display: block;
     transition: transform 0.4s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.07);
   }
 
-  #loadMore {
+  .gallery-item::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover::after {
+    opacity: 1;
+  }
+
+  .hidden {
     display: none;
   }
 
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+
+  .lightbox.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+/* Lightbox controls */
+.lightbox-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 30px;
+    z-index: 1000;
+  }
+  
+  .lightbox-controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 32px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .lightbox-controls button:hover {
+    background: #fff;
+  }
+  
+  /* Hide extra images */
+  .gallery-item.hidden {
+    display: none;
+  }
+  
 
 
-/* login icons */
 
+
+/* learn and login style */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Global Transition */
-  :root {
-    --main-blue: #003f8c;
-    --hover-blue: #0056b3;
-    --dark-bg: #343a40;
-    --hover-dark: #495057;
-    --glow-color: #24A148;
-    --white: #f4f4f4;
-  }
-  
-  /* Floating Icon Base Style */
-  .floating-icon.login {
-    position: fixed;
-    top: 265px;
-    right: 30px;
-    background: var(--white);
-    color: var(--white);
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    font-size: 32px;
-    text-align: center;
-    line-height: 65px;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    transition: all 0.4s ease;
-    animation: popIn 0.6s ease-out, pulseGlow 2.5s infinite ease-in-out;
-  }
-
-
-  
-  /* Styling for the floating icon */
-  .floating-icon.learn {
-    position: fixed;
-    top: 120px;
-    right: 30px;
-    background: var(--white);
-    color: var(--white);
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    font-size: 32px;
-    text-align: center;
-    line-height: 65px;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    transition: all 0.4s ease;
-    /* animation: popIn 0.6s ease-out, pulseGlow 2.5s infinite ease-in-out; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  --main-blue: #003f8c;
+  --hover-blue: #0056b3;
+  --dark-bg: #343a40;
+  --hover-dark: #495057;
+  --glow-color: #24A148;
+  --white: #f4f4f4;
+  --icon-size: 65px;
+  --sub-icon-size: 55px;
+}
+
+/* Base Floating Icon */
+.floating-icon {
+  position: fixed;
+  right: 2vw;
+  background: var(--white);
+  color: var(--white);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 50%;
+  font-size: 32px;
+  text-align: center;
+  line-height: var(--icon-size);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* Specific Icon Positions */
+.floating-icon.learn {
+  top: 15%;
+  animation-delay: 0.1s;
+}
+
+.floating-icon.login {
+  top: 35%;
+  animation: popIn 0.6s ease-out, blink 1.5s infinite, float 3s ease-in-out infinite;
+}
+
+/* Hover */
+.floating-icon:hover {
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Labels */
+.icon-label {
+  font-size: 15px;
+  color: white;
+  background-color: rgba(0, 63, 140, 0.85);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
   
-  .icon-label {
-    font-size: 15px;
-    color: white;
-    background-color: rgba(0, 63, 140, 0.85);
-    padding: 6px 12px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
+}
+
+.sub-icon-wrapper:hover .icon-label {
+  background-color: rgba(0, 86, 179, 0.9);
+}
+
+/* Sub Icons */
+.sub-icons {
+  position: fixed;
+  bottom: 28%;
+  right: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.sub-icons.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Sub Icon Button */
+.sub-icon {
+  background: white;
+  color: white;
+  width: var(--sub-icon-size);
+  height: var(--sub-icon-size);
+  border-radius: 50%;
+  text-align: center;
+  line-height: var(--sub-icon-size);
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s ease;
+  animation: popIn 0.5s ease-out;
+}
+
+.sub-icon:hover {
+  transform: scale(1.15) rotate(-5deg);
+  background: var(--primary);
+  box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
+}
+
+/* Sub Icon Wrapper */
+.sub-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.sub-icons.active .sub-icon-wrapper {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Close Button */
+.sub-icon-close {
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--primary);
+  text-align: center;
+  border-radius: 45px;
+  margin: 150px 160px 2px 0;
+  transition: color 0.2s ease;
+}
+
+.sub-icon-close:hover {
+  color: white;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  }
+}
+
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+/* Tablets and below */
+
+
+@media (max-width: 1440px) {
+    .floating-icon {
+      width: 58px;
+      height: 58px;
+      font-size: 28px;
+      line-height: 58px;
+    }
+  
+    .sub-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+    }
+  
+    .sub-icons {
+      right: 95px;
+      bottom: 10%;
+    }
   }
 
 
-  .icon-label1 {
-    font-size: 15px;
-    color: white;
-    background-color: rgba(0, 63, 140, 0.85);
-    padding: 6px 12px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
+
+@media (max-width: 1024px) {
+  .floating-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 28px;
+    line-height: 58px;
   }
 
-  
-  /* Positioning */
-  .floating-icon.learn {
-    right: 30px;
-    animation-delay: 0.1s;
-  }
-  
-  .floating-icon.login {
-    right: 30px;
-    animation: popIn 0.6s ease-out, blink 1.5s infinite, float 3s ease-in-out infinite;
-  }
-  
-  /* Fancy Hover for login */
-  .floating-icon.login:hover {
-    transform: scale(1.2) rotate(5deg);
-    background: var(--primary);
-    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
-  }
-
-
-    /* Fancy Hover for learn*/
-  .floating-icon.learn:hover {
-    background: var(--primary);
-    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
-  }
-  
-  .sub-icon-close {
-    font-size: 18px;
-    cursor: pointer;
-    margin-bottom: 2px;
-    color: white;
-    transition: color 0.2s ease;
-    background-color: var(--primary);
-    margin-right: 155px;
-    text-align: center;
-    border-radius: 45px;;
-  }
-  
-  .sub-icon-close:hover {
-    color: var(--secondary);
-  }
-
-
-  /* Sub Icons Wrapper */
-  .sub-icons {
-    position: fixed;
-    bottom: 280px;
-    right: 45px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-  }
-  
-  /* Show Sub-icons when a class is toggled */
-  .sub-icons.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  
-  /* Sub Icon Buttons */
   .sub-icon {
-    background: white;
-    color: var(--white);
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 55px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-    transition: all 0.35s ease;
-    animation: popIn 0.5s ease-out;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
   }
-  
-  .sub-icon:hover {
-    transform: scale(1.15) rotate(-5deg);
-    background: var(--primary);
-    box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
+
+  .sub-icons {
+    right: 90px;
+    bottom: 10%;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .floating-icon.learn {
+    top: 15%;
+  }
+
+  .floating-icon.login {
+    top: 35%;
+  }
+
+  .icon-label {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .sub-icons {
+    right: 60px;
+    bottom: 10%;
+    gap: 14px;
   }
 
   .sub-icon-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transform: translateX(-10px);
-    opacity: 0;
-    transition: all 0.4s ease;
-    text-decoration: none; /* Remove underline */
+    gap: 8px;
   }
-  
-  .sub-icons.active .sub-icon-wrapper {
-    transform: translateX(0);
-    opacity: 1;
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .floating-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    line-height: 52px;
   }
-  
-  /* Keep icon and label styles */
+
   .sub-icon {
-    background: white;
-    color: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 55px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-    transition: all 0.35s ease;
-  }
-  
-  .sub-icon:hover {
-    transform: scale(1.15) rotate(-5deg);
-    background: var(--primary);
-    box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
   }
 
+  .icon-label {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
 
-
-
-  
-  .sub-icon-wrapper:hover .icon-label {
-    background-color: rgba(0, 86, 179, 0.9);
+  .sub-icons {
+    bottom: 15%;
+    right: 20px;
   }
-  
-  
-  
-  /* Animations */
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  
-  @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 5px var(--glow-color);
-    }
-    50% {
-      box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
-    }
-  }
-  
+}
