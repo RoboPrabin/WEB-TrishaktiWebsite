@@ -152,34 +152,6 @@ button:focus-visible {
   
 
 
-
-
-  /* Styling for the floating icon */
-.floating-icon.learn {
-    position: fixed; /* Keeps it in place while scrolling */
-    top: 130px; /* Distance from the bottom of the page */
-    right: 30px; /* Distance from the right side */
-    background-color: #f4f4f4; /* Icon background color */
-    color: #f4f4f4; /* Icon color */
-    font-size: 30px; /* Icon size */
-    width: 60px; /* Icon width */
-    height: 60px; /* Icon height */
-    border-radius: 50%; /* Makes it round */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    cursor: pointer; /* Pointer cursor on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    z-index: 100; /* Higher number means closer to the front */
-
-}
-
-.floating-icon:hover {
-    background-color: #003f8c; /* Darken the icon color on hover */
-}
-
-
 .btn-light {
 background-color: #f4f4f4;
 }
@@ -1239,8 +1211,8 @@ footer {
   /* Floating Icon Base Style */
   .floating-icon.login {
     position: fixed;
-    top: 280px;
-    left: 30px;
+    top: 270px;
+    right: 30px;
     background: var(--white);
     color: var(--white);
     width: 65px;
@@ -1259,25 +1231,48 @@ footer {
 
   
   /* Styling for the floating icon */
-.floating-icon.learn {
-    position: fixed; /* Keeps it in place while scrolling */
-    top: 130px; /* Distance from the bottom of the page */
-    right: 30px; /* Distance from the right side */
-    background-color: #f4f4f4; /* Icon background color */
-    color: #f4f4f4; /* Icon color */
-    font-size: 30px; /* Icon size */
-    width: 60px; /* Icon width */
-    height: 60px; /* Icon height */
-    border-radius: 50%; /* Makes it round */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    cursor: pointer; /* Pointer cursor on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    z-index: 100; /* Higher number means closer to the front */
-
+  .floating-icon.learn {
+    position: fixed;
+    top: 130px;
+    right: 30px;
+    background: var(--white);
+    color: var(--white);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 32px;
+    text-align: center;
+    line-height: 65px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.4s ease;
+    /* animation: popIn 0.6s ease-out, pulseGlow 2.5s infinite ease-in-out; */
 }
+
+  
+  .icon-label {
+    font-size: 15px;
+    color: white;
+    background-color: rgba(0, 63, 140, 0.85);
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+
+
+  .icon-label1 {
+    font-size: 15px;
+    color: white;
+    background-color: rgba(0, 63, 140, 0.85);
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
 
   
   /* Positioning */
@@ -1287,14 +1282,21 @@ footer {
   }
   
   .floating-icon.login {
-    left: 30px;
+    right: 30px;
     animation: popIn 0.6s ease-out, blink 1.5s infinite, float 3s ease-in-out infinite;
   }
   
-  /* Fancy Hover */
-  .floating-icon:hover {
+  /* Fancy Hover for login */
+  .floating-icon.login:hover {
     transform: scale(1.2) rotate(5deg);
-    background: var(--hover-blue);
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
+  }
+
+
+    /* Fancy Hover for learn*/
+  .floating-icon.learn:hover {
+    background: var(--primary);
     box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
   }
   
@@ -1302,7 +1304,7 @@ footer {
   .sub-icons {
     position: fixed;
     bottom: 300px;
-    left: 45px;
+    right: 45px;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -1322,7 +1324,7 @@ footer {
   
   /* Sub Icon Buttons */
   .sub-icon {
-    background: var(--dark-bg);
+    background: white;
     color: var(--white);
     width: 55px;
     height: 55px;
@@ -1338,7 +1340,7 @@ footer {
   
   .sub-icon:hover {
     transform: scale(1.15) rotate(-5deg);
-    background: var(--hover-dark);
+    background: var(--primary);
     box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
   }
 
@@ -1359,7 +1361,7 @@ footer {
   
   /* Keep icon and label styles */
   .sub-icon {
-    background: var(--dark-bg);
+    background: white;
     color: white;
     width: 55px;
     height: 55px;
@@ -1374,20 +1376,13 @@ footer {
   
   .sub-icon:hover {
     transform: scale(1.15) rotate(-5deg);
-    background: var(--hover-dark);
+    background: var(--primary);
     box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
   }
-  
-  .icon-label {
-    font-size: 15px;
-    color: white;
-    background-color: rgba(0, 63, 140, 0.85);
-    padding: 6px 12px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
-  }
+
+
+
+
   
   .sub-icon-wrapper:hover .icon-label {
     background-color: rgba(0, 86, 179, 0.9);
