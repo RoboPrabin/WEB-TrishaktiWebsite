@@ -1337,7 +1337,7 @@ footer {
 }
 
 .sub-icon-close:hover {
-  color: var(--secondary);
+  color: #f4f4f4;
 }
 
 /* Animations */
@@ -1462,7 +1462,7 @@ footer {
   }
 
   .sub-icons {
-    bottom: 18%;
+    bottom: 15%;
     right: 20px;
   }
 }
