@@ -27,7 +27,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 </head>
 
@@ -128,42 +128,46 @@
         </nav>
     </div>
 
+<!-- Navbar End -->
 
-        <!-- Navbar End -->
-<!-- Sub Icons on the left (for login) -->
+
+
+
+<!-- HTML -->
 <div class="sub-icons" id="subIcons">
+    <!-- Close Button -->
+    <div class="sub-icon-close" onclick="toggleSubIcons()">✖</div>
+
     <a class="sub-icon-wrapper" href="https://kyc.trishakti.com.np/kyc/" target="_blank">
-      <div class="sub-icon">👤</div>
-      <span class="icon-label">Open Account</span>
+        <div class="sub-icon">👤</div>
+        <span class="icon-label">Open Account</span>
     </a>
     <a class="sub-icon-wrapper" href="https://kyc.trishakti.com.np/kyc/" target="_blank">
         <div class="sub-icon">🔑</div>
         <span class="icon-label">Broker Login</span>
-      </a>
+    </a>
     <a class="sub-icon-wrapper" href="https://tms48.nepsetms.com.np/login" target="_blank">
-      <div class="sub-icon">📈</div>
-      <span class="icon-label">TMS Login</span>
+        <div class="sub-icon">📈</div>
+        <span class="icon-label">TMS Login</span>
     </a>
     <a class="sub-icon-wrapper" href="https://meroshare.cdsc.com.np/" target="_blank">
-      <div class="sub-icon">💼</div>
-      <span class="icon-label">MeroShare</span>
+        <div class="sub-icon">💼</div>
+        <span class="icon-label">MeroShare</span>
     </a>
-  </div>
-  
+</div>
 
-          <!-- Floating learn icon (right side) -->
-    <div class="floating-icon learn" onclick="window.location.href='learn.html';">
-        📚
-        <span class="icon-label1">Learn Kit</span>
-    </div>
+<!-- Floating Learn Icon (Left) -->
+<div class="floating-icon learn" onclick="window.location.href='learn.html';">
+    📚
+    <span class="icon-label">LearnKit</span>
+</div>
 
+<!-- Floating Login Icon (Left) -->
+<div class="floating-icon login" onclick="toggleSubIcons()">
+    🔐
+    <span class="icon-label">Login</span>
+</div>
 
-
-    <!-- Floating login icon (left side) -->
-    <div class="floating-icon login" onclick="toggleSubIcons()">
-        🔐
-        <span class="icon-label">Login</span>
-    </div>
 
 
 
@@ -464,14 +468,17 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
 
-    <script>
+    <!-- for login and learn
+      <script>
         document.querySelector('.floating-icon.login').addEventListener('click', () => {
-          document.querySelector('.sub-icons').classList.toggle('active');
+          document.querySelector('.subIcons').classList.toggle('active');
         });
-      </script>
+
+        function toggleSubIcons() {
+            document.getElementById('subIcons').classList.toggle('active');
+         }
+      </script> -->
       
-
-
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -1211,7 +1211,7 @@ footer {
   /* Floating Icon Base Style */
   .floating-icon.login {
     position: fixed;
-    top: 270px;
+    top: 265px;
     right: 30px;
     background: var(--white);
     color: var(--white);
@@ -1233,7 +1233,7 @@ footer {
   /* Styling for the floating icon */
   .floating-icon.learn {
     position: fixed;
-    top: 130px;
+    top: 120px;
     right: 30px;
     background: var(--white);
     color: var(--white);
@@ -1300,10 +1300,27 @@ footer {
     box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
   }
   
+  .sub-icon-close {
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    color: white;
+    transition: color 0.2s ease;
+    background-color: var(--primary);
+    margin-right: 155px;
+    text-align: center;
+    border-radius: 45px;;
+  }
+  
+  .sub-icon-close:hover {
+    color: var(--secondary);
+  }
+
+
   /* Sub Icons Wrapper */
   .sub-icons {
     position: fixed;
-    bottom: 300px;
+    bottom: 280px;
     right: 45px;
     display: flex;
     flex-direction: column;

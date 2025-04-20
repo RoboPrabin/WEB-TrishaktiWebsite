@@ -89,6 +89,32 @@
 
 
 
+    // Function to toggle visibility of subIcons
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('subIcons');
+        if (subIcons) {
+            subIcons.classList.toggle('active');
+        }
+    }
+
+    // Run after DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('.floating-icon.login');
+        const closeButton = document.querySelector('.sub-icon-close');
+
+        if (loginButton) {
+            loginButton.addEventListener('click', toggleSubIcons);
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', toggleSubIcons);
+        }
+    });
+
+
+
+
+
 
     
 

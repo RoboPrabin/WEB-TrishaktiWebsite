@@ -17,6 +17,11 @@ body {
     color: black;
   }
 
+  p {
+      text-align: justify;
+  text-justify: inter-word;
+  }
+
 .primary {
     color: #003f8c;
 }
@@ -43,15 +48,15 @@ body {
 /* market blinker */
 /* Only text blinks with color pulse */
 .blink {
-    color: red !important;
+    color:  #24A148!important;
     font-weight: bold;
-    text-shadow: 0 0 5px #24A148, 0 0 10px #003f8c;
+    /* text-shadow: 0 0 2px #24A148, 0 0 2px #003f8c; */
+    text-shadow: 0 0 1px #24A148;
     padding: 2px 6px;
-    /* background: linear-gradient(45deg, #F4F4F4, #24A148); */
     display: inline-block;
     width: 100px; /* Fixed width */
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
     animation: text-blink 1s ease-in-out infinite; /* text-only animation */
@@ -145,34 +150,6 @@ button:focus-visible {
     font-weight: bold;
   }
   
-
-
-
-
-  /* Styling for the floating icon */
-.floating-icon {
-    position: fixed; /* Keeps it in place while scrolling */
-    top: 170px; /* Distance from the bottom of the page */
-    right: 30px; /* Distance from the right side */
-    background-color: #f4f4f4; /* Icon background color */
-    color: #f4f4f4; /* Icon color */
-    font-size: 30px; /* Icon size */
-    width: 60px; /* Icon width */
-    height: 60px; /* Icon height */
-    border-radius: 50%; /* Makes it round */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    cursor: pointer; /* Pointer cursor on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    z-index: 100; /* Higher number means closer to the front */
-
-}
-
-.floating-icon:hover {
-    background-color: #003f8c; /* Darken the icon color on hover */
-}
 
 
 .btn-light {
@@ -691,6 +668,11 @@ color: var(--primary);
     font-size: 2.5rem; /* Default font size for large screens */
 }
 
+/* .carousel-indicators{
+       background-color: #ffffff;
+
+} */
+
 
 /* Adjust font size for medium screens */
 @media (max-width: 1440px) {
@@ -735,21 +717,35 @@ color: var(--primary);
 /* Even smaller font size for very small screens */
 @media (max-width: 576px) {
     .fact {
-        font-size: 1.2rem; /* Further reduce font size for very small screens */
+        font-size: 1.3rem; /* Further reduce font size for very small screens */
     }
 }
 
 /* For screens smaller than 400px */
 @media (max-width: 400px) {
     .fact {
-        font-size: 1rem; /* Reduce font size to fit very small screens */
+        font-size: 1.3rem; /* Reduce font size to fit very small screens */
     }
 }
 
 /* For screens smaller than 200px (extremely small screens, like feature phones) */
-@media (max-width: 200px) {
+@media (max-width: 300px) {
     .fact {
-        font-size: 0.8rem; /* Further reduce font size for extremely small screens */
+        font-size: 1rem; /* Further reduce font size for extremely small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 259px) {
+    .fact {
+        font-size: 0.9rem; /* Reduce font size to fit very small screens */
+    }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 245px) {
+    .fact {
+        font-size: 0.8rem; /* Reduce font size to fit very small screens */
     }
 }
 
@@ -828,6 +824,14 @@ color: var(--primary);
 
 .service .nav .nav-link.active h5 i {
     color: #F4F4F4 !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--primary) !important;
+    border-radius: 10px;
+
 }
 
 
@@ -1112,12 +1116,6 @@ footer {
 }
 
 
-
-
-
-
-
-
 .copyright {
     color: var(--light);
     background: #000B1C;
@@ -1129,4 +1127,342 @@ footer {
 
 .copyright a:hover {
     color: var(--primary);
+}
+
+
+/* gallery style */
+.gallery-section {
+    padding: 60px 0;
+  }
+
+  .gallery-sidebar {
+    position: sticky;
+    top: 100px;
+  }
+
+  .filter-btn {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    font-weight: 600;
+  }
+
+  .filter-btn.active {
+    background-color: var(--primary);
+    color: #fff;
+  }
+
+  .gallery-item {
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .gallery-item.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .gallery-item img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  #loadMore {
+    display: none;
+  }
+
+
+
+
+
+
+
+/* learn and login style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-blue: #003f8c;
+  --hover-blue: #0056b3;
+  --dark-bg: #343a40;
+  --hover-dark: #495057;
+  --glow-color: #24A148;
+  --white: #f4f4f4;
+  --icon-size: 65px;
+  --sub-icon-size: 55px;
+}
+
+/* Base Floating Icon */
+.floating-icon {
+  position: fixed;
+  right: 2vw;
+  background: var(--white);
+  color: var(--white);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 50%;
+  font-size: 32px;
+  text-align: center;
+  line-height: var(--icon-size);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* Specific Icon Positions */
+.floating-icon.learn {
+  top: 15%;
+  animation-delay: 0.1s;
+}
+
+.floating-icon.login {
+  top: 35%;
+  animation: popIn 0.6s ease-out, blink 1.5s infinite, float 3s ease-in-out infinite;
+}
+
+/* Hover */
+.floating-icon:hover {
+  background: var(--primary);
+  box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Labels */
+.icon-label {
+  font-size: 15px;
+  color: white;
+  background-color: rgba(0, 63, 140, 0.85);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  
+}
+
+.sub-icon-wrapper:hover .icon-label {
+  background-color: rgba(0, 86, 179, 0.9);
+}
+
+/* Sub Icons */
+.sub-icons {
+  position: fixed;
+  bottom: 28%;
+  right: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.sub-icons.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Sub Icon Button */
+.sub-icon {
+  background: white;
+  color: white;
+  width: var(--sub-icon-size);
+  height: var(--sub-icon-size);
+  border-radius: 50%;
+  text-align: center;
+  line-height: var(--sub-icon-size);
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s ease;
+  animation: popIn 0.5s ease-out;
+}
+
+.sub-icon:hover {
+  transform: scale(1.15) rotate(-5deg);
+  background: var(--primary);
+  box-shadow: 0 0 12px var(--glow-color), 0 0 25px var(--glow-color);
+}
+
+/* Sub Icon Wrapper */
+.sub-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.sub-icons.active .sub-icon-wrapper {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Close Button */
+.sub-icon-close {
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--primary);
+  text-align: center;
+  border-radius: 45px;
+  margin: 150px 160px 2px 0;
+  transition: color 0.2s ease;
+}
+
+.sub-icon-close:hover {
+  color: var(--secondary);
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+  }
+}
+
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+/* Tablets and below */
+
+
+@media (max-width: 1440px) {
+    .floating-icon {
+      width: 58px;
+      height: 58px;
+      font-size: 28px;
+      line-height: 58px;
+    }
+  
+    .sub-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+    }
+  
+    .sub-icons {
+      right: 95px;
+      bottom: 10%;
+    }
+  }
+
+
+
+@media (max-width: 1024px) {
+  .floating-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 28px;
+    line-height: 58px;
+  }
+
+  .sub-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+  }
+
+  .sub-icons {
+    right: 90px;
+    bottom: 10%;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .floating-icon.learn {
+    top: 15%;
+  }
+
+  .floating-icon.login {
+    top: 35%;
+  }
+
+  .icon-label {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .sub-icons {
+    right: 60px;
+    bottom: 10%;
+    gap: 14px;
+  }
+
+  .sub-icon-wrapper {
+    gap: 8px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .floating-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    line-height: 52px;
+  }
+
+  .sub-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+  }
+
+  .icon-label {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .sub-icons {
+    bottom: 18%;
+    right: 20px;
+  }
 }

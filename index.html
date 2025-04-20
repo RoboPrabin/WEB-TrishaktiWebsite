@@ -128,18 +128,24 @@
         </nav>
     </div>
 
+<!-- Navbar End -->
 
-        <!-- Navbar End -->
+
+
+
 <!-- Sub Icons on the left (for login) -->
 <div class="sub-icons" id="subIcons">
+    <!-- Close Button -->
+    <div class="sub-icon-close" onclick="toggleSubIcons()">✖</div>
+  
     <a class="sub-icon-wrapper" href="https://kyc.trishakti.com.np/kyc/" target="_blank">
       <div class="sub-icon">👤</div>
       <span class="icon-label">Open Account</span>
     </a>
     <a class="sub-icon-wrapper" href="https://kyc.trishakti.com.np/kyc/" target="_blank">
-        <div class="sub-icon">🔑</div>
-        <span class="icon-label">Broker Login</span>
-      </a>
+      <div class="sub-icon">🔑</div>
+      <span class="icon-label">Broker Login</span>
+    </a>
     <a class="sub-icon-wrapper" href="https://tms48.nepsetms.com.np/login" target="_blank">
       <div class="sub-icon">📈</div>
       <span class="icon-label">TMS Login</span>
@@ -161,8 +167,8 @@
 
     <!-- Floating login icon (left side) -->
     <div class="floating-icon login" onclick="toggleSubIcons()">
-        🔐
-        <span class="icon-label">Login</span>
+    🔐
+    <span class="icon-label">Login</span>
     </div>
 
 
@@ -464,11 +470,16 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
 
-    <script>
+    <!-- for login and learn
+      <script>
         document.querySelector('.floating-icon.login').addEventListener('click', () => {
-          document.querySelector('.sub-icons').classList.toggle('active');
+          document.querySelector('.subIcons').classList.toggle('active');
         });
-      </script>
+
+        function toggleSubIcons() {
+            document.getElementById('subIcons').classList.toggle('active');
+         }
+      </script> -->
       
 
 
