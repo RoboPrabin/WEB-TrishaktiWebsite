@@ -12,6 +12,25 @@ body {
     background-color: #f4f4f4 !important; /* Set the background color to #f4f4f4 */
   }
 
+
+  .navbar-brand img {
+    height: 500px;             /* Adjust height as needed */
+    object-fit: contain;      /* Keeps image proportions */
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    padding-left: 0;          /* Remove default padding if needed */
+    margin-top: 0px;           /* Optional: remove left margin */
+  }
+  
+
+
+
+
+
+
   h1,h5,h4,h2,h3,p {
     font-family: 'Roboto', sans-serif;
     color: black;
