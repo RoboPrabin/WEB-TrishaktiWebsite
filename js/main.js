@@ -33,11 +33,103 @@
         }
     });
     
+
+    $(document).ready(function() {
+        function adjustTitle() {
+            if ($(window).width() > 1635
+        ) {  // Large screen (adjust the breakpoint as needed)
+                // Remove <br> by replacing with plain text
+                $('.goal').html('Your Financial Status Is Our Goal');
+            } else {
+                // Ensure <br> is present if screen size is small
+                if (!$('.goal').html().includes('<br>')) {
+                    $('.goal').html('Your Financial Status Is Our<br>Goal');
+                }
+            }
+        }
+    
+        // Call the function initially
+        adjustTitle();
+    
+        // Re-check on window resize
+        $(window).resize(function() {
+            adjustTitle();
+        });
+    });
+    
+// Market link blinking effect
+    // Function to update the blinking effect based on time
+    
+    function updateMarketBlink() {
+        const now = new Date();
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const nepalTime = new Date(utc + (5.75 * 3600000));
+    
+        const day = nepalTime.getDay(); // 0 = Sunday, 6 = Saturday
+        const hour = nepalTime.getHours();
+    
+        const isSundayToThursday = day >= 0 && day <= 4;
+        const isBetween11And15 = hour >= 11 && hour < 15;
+    
+        const marketLink = document.getElementById("marketLink");
+        const marketDropdown = document.getElementById("marketDropdown");
+    
+        if (marketLink && marketDropdown) {
+            if (isSundayToThursday && isBetween11And15) {
+                marketLink.classList.add("blink");
+                marketDropdown.classList.add("blink");
+            } else {
+                marketLink.classList.remove("blink");
+                marketDropdown.classList.remove("blink");
+            }
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        updateMarketBlink();
+        setInterval(updateMarketBlink, 60000);
+    });
+    
+
+// end of market link blinking effect
+
+
+
+    // Function to toggle visibility of subIcons
+    function toggleSubIcons() {
+        const subIcons = document.getElementById('subIcons');
+        if (subIcons) {
+            subIcons.classList.toggle('active');
+        }
+    }
+
+    // Run after DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.querySelector('.floating-icon.login');
+        const closeButton = document.querySelector('.sub-icon-close');
+
+        if (loginButton) {
+            loginButton.addEventListener('click', toggleSubIcons);
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', toggleSubIcons);
+        }
+    });
+
+
+
+
+
+
+    
+
     
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
+            $('.back-to-top').removeClass('visually-hidden');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
